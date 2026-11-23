@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evening Together</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#193e35;font:17px/1.5 "DM Sans",system-ui,sans-serif}header,main{max-width:1100px;margin:auto;padding:22px clamp(16px,4vw,50px)}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d5dbd0;gap:12px}.brand{font:600 clamp(18px,3vw,28px) Georgia,serif}.brand b{color:#b46038;margin-right:8px}h1,h2{font:normal clamp(30px,5vw,62px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:clamp(26px,3vw,38px)}button,select,input,a.action{font:inherit;color:inherit;background:#fffdf7;border:1px solid #b8c4b9;border-radius:10px;padding:10px 14px;max-width:100%}button,a.action{cursor:pointer}button:hover,a.action:hover{background:#e0eadf}button.primary{background:#205547;color:white;border-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:4px solid #cb772e;outline-offset:3px}.hero{padding:clamp(24px,5vw,58px);border-radius:22px;background:#dce9da;margin:12px 0 28px}.hero h1{max-width:810px}.meta{font-size:.88em;color:#436454;font-weight:650}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.week{display:grid;grid-template-columns:minmax(75px,110px) 1fr auto;align-items:center;text-align:left;width:100%;margin:8px 0;gap:12px;background:#fffdf8;padding:16px}.date{color:#596c60;font-size:.88em}.panel{background:#fffdf8;border:1px solid #d7dcd1;padding:clamp(16px,4vw,34px);border-radius:18px;margin:15px 0}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px 10px 10px 0}fieldset{border:1px solid #c8d1c5;border-radius:12px;margin:14px 0;padding:12px}.tv{font-size:clamp(22px,3vw,44px)}.tv h1{font-size:clamp(38px,5.5vw,90px)}.tv button,.tv a{margin:5px}.tv .hero{min-height:48vh}.action{display:inline-block;text-decoration:none}button:disabled{opacity:.45;cursor:default}header select{font-size:15px}small{display:block}a{color:#205547}@media(max-width:520px){.week{grid-template-columns:70px 1fr auto}.hero{padding:22px}header{padding:14px}.brand b{margin-right:3px}}@media(min-width:1500px){header,main{max-width:80vw}body{font-size:22px}}
-.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
 const catalog=[
 ['nature','Забота в маленьких деталях','Care in the little things','Матфея 6:26','Matthew 6:26','Какую птицу ты заметил сегодня?','Which bird caught your eye today?','Нарисуйте птицу по памяти. Обсудите, почему Иисус обратил внимание на птиц.','Sketch a bird from memory. Discuss why Jesus drew attention to birds.'],
 ['friends','Первый шаг к миру','The first step toward peace','Колоссянам 3:13','Colossians 3:13','Какие слова помогают тебе помириться?','What words help you make peace?','Разыграйте ссору двух вымышленных соседей и придумайте два добрых окончания.','Act out a disagreement between two imaginary neighbours and try two kind endings.'],
@@ -23,7 +23,7 @@ let s={};try{s=JSON.parse(localStorage.getItem(storageKey))||{}}catch{}
 const systemLanguage=()=>(navigator.languages||[navigator.language]).map(x=>x.slice(0,2)).find(x=>['ru','en'].includes(x))||'en';
 let lang,view='home',current=0,guestTopic=null,step=0,draft=[];
 const t=(ru,en)=>lang==='ru'?ru:en;
-const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(s))}catch{}};
+const save=()=>{try{localStorage.setItem(storageKey,JSON.stringify(s))}catch{alert(t('Браузер не смог сохранить изменения на устройстве. Проверьте доступное место и настройки хранения.','Your browser could not save changes on this device. Check available space and storage settings.'))}};
 const addDays=(date,n)=>{const d=new Date(date);d.setDate(d.getDate()+n);return d};
 const iso=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
 const today=new Date();s.start=s.start||iso(addDays(today,(5-today.getDay()+7)%7));s.people=s.people||[];s.weeks=s.weeks||4;s.minutes=s.minutes||40;
@@ -42,16 +42,132 @@ function btn(text,fn,primary=false){return '<button '+(primary?'class="primary" 
 function article(id=2014205){return 'https://wol.jw.org/'+t('ru/wol/d/r2/lp-u/','en/wol/d/r1/lp-e/')+id}
 function field(label,html){return '<label>'+label+html+'</label>'}
 function select(id,items,val){return '<select id="'+id+'">'+items.map(([v,k])=>'<option value="'+v+'" '+(String(val)===String(v)?'selected':'')+'>'+k+'</option>').join('')+'</select>'}
+function eveningDate(){return iso(date(current))}
+function guests(){return s.guests?.[eveningDate()]||[]}
+function editGuests(){draft=guests().map(p=>({...p}));go('guests')}
+function validPeople(){return [...document.querySelectorAll('#members input')].every(input=>input.reportValidity())}
+function saveGuests(){
+ if(!validPeople())return;
+ s.guests=s.guests||{};s.guests[eveningDate()]=draft;save();go('detail')
+}
+function guestsScreen(){
+ app.innerHTML=btn(t('← Вечер','← Evening'),"go('detail')")+'<h1>'+t('Гости','Guests')+' · '+fmt(current)+'</h1><section class="panel"><div id="members">'+people()+'</div>'+btn(t('+ Гость','+ Guest'),'addMember()')+'</section>'+btn(t('Сохранить гостей','Save guests'),'saveGuests()',true)
+}
+function savedIdea(){
+ const idea=s.ideas?.[eveningDate()];
+ return guestTopic===null&&idea?.topic===s.plan[current]&&idea?.language===lang?idea:null
+}
+function recordEvening(){
+ const id=guestTopic??s.plan[current],key=(guestTopic===null?eveningDate():'shared-'+iso(new Date()))+'/'+id;
+ const attendees=guestTopic===null?[...s.people,...guests()]:[];
+ s.history=s.history||{};
+ s.history[key+'/'+Date.now()]={id,day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:savedIdea()?.title||'',outline:steps(catalog[id]).map(([label,body,time])=>[label,body,time])};
+ save()
+}
+function historyScreen(){
+ const records=Object.values(s.history||{}).reverse().sort((a,b)=>b.day.localeCompare(a.day));
+ app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('История вечеров','Evening history')+'</h1>'+
+ (records.length?records.map(r=>{
+  const c=catalog[r.id],names=r.attendees.map(p=>[p.name,p.age].filter(Boolean).map(esc).join(' · ')).filter(Boolean).join(', ');
+  return '<details class="panel"><summary>'+esc(r.title||t(c[1],c[2]))+' · '+r.day+' · '+r.minutes+t(' мин',' min')+'</summary><p>'+names+'</p><ol>'+r.outline.map(([label,body,time])=>'<li><strong>'+esc(label)+'</strong> · '+time+'<p>'+esc(body)+'</p></li>').join('')+'</ol></details>'
+ }).join(''):'<p>'+t('Здесь появятся программы после нажатия «Завершить».','Completed outlines appear here when you select Finish.')+'</p>')
+}
+const providers={gemini:'Gemini',grok:'Grok'};
+let provider='gemini',aiResults=[],aiRequest=null;
+const keyPrefix='evening-together:provider:';
+function aiPrompt(){
+ const c=catalog[s.plan[current]],prefs=document.getElementById('includePrefs')?.checked;
+ const context=prefs?[...s.people,...guests()].map(p=>{
+  const age=p.age==null||p.age===''?'unspecified':p.age<6?'under 6':p.age<13?'6–12':p.age<18?'13–17':'adult';
+  return [age,p.topic,p.format||'read'].join(', ')
+ }):[];
+ return ['Write 3 distinct family worship evening outlines in '+(lang==='ru'?'Russian':'English')+'.',
+ 'Scripture: '+t(c[3],c[4])+'. Total time: '+duration()+' min. The app handles timing, opening prayer, Bible reading and conclusion.',
+ 'Return a JSON array of 3 objects with string fields title, question (an opening question), discuss (two specific discussion questions), activity (an actionable group exercise). Do not invent quotations, publications or links.',
+ ...context.map(x=>'Participant preferences: '+x)].join('\n')
+}
+function refreshPrompt(){document.getElementById('promptPreview').textContent=aiPrompt()}
+function openAI(){aiResults=[];go('ai')}
+function keyForProvider(){try{return localStorage.getItem(keyPrefix+provider)||''}catch{return ''}}
+async function cryptKey(secret,passphrase,unlock=false){
+ const enc=new TextEncoder(),stored=unlock?JSON.parse(secret):null;
+ const salt=stored?Uint8Array.from(stored.salt):crypto.getRandomValues(new Uint8Array(16));
+ const iv=stored?Uint8Array.from(stored.iv):crypto.getRandomValues(new Uint8Array(12));
+ const material=await crypto.subtle.importKey('raw',enc.encode(passphrase),'PBKDF2',false,['deriveKey']);
+ const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:600000,hash:'SHA-256'},material,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);
+ if(unlock)return new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv},key,Uint8Array.from(stored.bytes)));
+ const bytes=new Uint8Array(await crypto.subtle.encrypt({name:'AES-GCM',iv},key,enc.encode(secret)));
+ return JSON.stringify({salt:[...salt],iv:[...iv],bytes:[...bytes]})
+}
+function aiScreen(){
+ app.innerHTML=btn(t('← Вечер','← Evening'),"go('detail')")+'<h1>'+t('Идеи для вечера','Evening ideas')+'</h1><section class="panel">'+
+ field(t('Провайдер','Provider'),'<select id="providerSelect">'+Object.entries(providers).map(([id,name])=>'<option value="'+id+'" '+(provider===id?'selected':'')+'>'+name+'</option>').join('')+'</select>')+
+ field('API key','<input id="apiKey" type="password" autocomplete="off" autocapitalize="none" spellcheck="false">')+
+ '<p><label><span><input id="rememberKey" type="checkbox"> '+t('Сохранить ключ на устройстве с парольной фразой','Save an encrypted key on this device')+'</span></label> '+btn(t('Удалить ключ','Forget key'),'forgetKey()')+'</p>'+field(t('Парольная фраза для сохранения или открытия ключа','Passphrase to save or unlock key'),'<input id="keyPhrase" type="password" autocomplete="off">')+'<p>'+t('На общем устройстве оставьте сохранение выключенным. Ключ и запрос отправляются выбранному провайдеру. Возможна оплата по его тарифу.','Leave saving off on shared devices. Your key and prompt go to the selected provider. API charges may apply.')+'</p>'+
+ '<label><span><input type="checkbox" id="includePrefs" onchange="refreshPrompt()"> '+t('Добавить возрастные группы, интересы и роли участников','Include age groups, interests and roles')+'</span></label><details><summary>'+t('Текст запроса','Preview request')+'</summary><pre id="promptPreview"></pre></details><p>'+btn(t('Получить три варианта','Generate three ideas'),'generateIdeas()',true)+'</p><div role="status" id="aiStatus"></div></section><div id="aiChoices"></div>';
+ document.getElementById('providerSelect').onchange=e=>{provider=e.target.value;aiResults=[];aiScreen()};
+ document.getElementById('apiKey').placeholder=keyForProvider()?t('Ключ сохранён · введите фразу ниже','Key saved · enter passphrase below'):'';document.getElementById('rememberKey').checked=!!keyForProvider();refreshPrompt()
+}
+function forgetKey(){localStorage.removeItem(keyPrefix+provider);document.getElementById('apiKey').value='';document.getElementById('rememberKey').checked=false;document.getElementById('apiKey').placeholder='';document.getElementById('keyPhrase').value=''}
+async function generateIdeas(){
+ if(aiRequest)return;
+ const get=id=>document.getElementById(id),status=get('aiStatus');
+ let key=get('apiKey').value.trim();
+ const stored=keyForProvider(),remember=get('rememberKey').checked,phrase=get('keyPhrase').value;
+ if((remember||(!key&&stored))&&!phrase){status.textContent=t('Введите парольную фразу.','Enter the passphrase.');return}
+ if(!key&&!stored){status.textContent=t('Введите свой API-ключ.','Enter your API key.');return}
+ const prompt=aiPrompt(),gemini=provider==='gemini';
+ const url=gemini?'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent':'https://api.x.ai/v1/chat/completions';
+
+ const body=gemini?{contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json'}}:{model:'grok-4.3',messages:[{role:'user',content:prompt}]};
+ const controller=new AbortController();aiRequest=controller;
+ const timeout=setTimeout(()=>controller.abort(),60000);
+ try{
+  get('providerSelect').disabled=true;get('includePrefs').disabled=true;
+  const selectedProvider=provider;
+  if(!key)key=await cryptKey(stored,phrase,true);
+  if(remember && (get('apiKey').value.trim()||!stored)){
+   const encrypted=await cryptKey(key,phrase);
+   if(controller.signal.aborted||!status.isConnected)return;
+   localStorage.setItem(keyPrefix+selectedProvider,encrypted)
+  }
+  if(controller.signal.aborted||!status.isConnected)return;
+  if(!remember)localStorage.removeItem(keyPrefix+selectedProvider);
+  const headers=gemini?{'x-goog-api-key':key}:{Authorization:'Bearer '+key};
+  get('aiChoices').textContent='';status.textContent=t('Готовим варианты…','Preparing ideas…');
+  const result=await fetch(url,{method:'POST',redirect:'error',credentials:'omit',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal});
+  if(!result.ok)throw Error(String(result.status));
+  const data=await result.json();
+  const raw=gemini?data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text).join(''):data.choices?.[0]?.message?.content;
+  const items=JSON.parse(String(raw).trim().replace(/^```(?:json)?\s*|\s*```$/gi,''));
+  if(!Array.isArray(items)||items.length!==3||items.some(i=>!['title','question','discuss','activity'].every(k=>typeof i?.[k]==='string'&&i[k].trim()&&i[k].length<=3000)))throw Error('format');
+  if(!status.isConnected)return;
+  aiResults=items;status.textContent=t('Выберите вариант для этого вечера.','Choose an outline for this evening.');
+  get('aiChoices').innerHTML=items.map((i,n)=>'<section class="panel"><h2>'+esc(i.title)+'</h2><p>'+esc(i.question)+'</p><p>'+esc(i.discuss)+'</p><p>'+esc(i.activity)+'</p>'+btn(t('Выбрать','Use outline'),'useIdea('+n+')')+'</section>').join('')
+ }catch(e){
+  status.textContent=t('Не удалось получить варианты. Проверьте парольную фразу, ключ, доступ к модели, лимит и соединение.','Could not generate ideas. Check your passphrase, key, model access, quota and connection.')+(/^\d{3}$/.test(e.message)?' (HTTP '+e.message+')':'')
+ }finally{clearTimeout(timeout);if(aiRequest===controller)aiRequest=null;if(status.isConnected){get('providerSelect').disabled=false;get('includePrefs').disabled=false}}
+}
+function useIdea(index){
+ const {title,question,discuss,activity}=aiResults[index];
+ s.ideas=s.ideas||{};s.ideas[eveningDate()]={topic:s.plan[current],language:lang,title,question,discuss,activity};save();go('detail')
+}
+function restoreOutline(){delete s.ideas[eveningDate()];save();render()}
+
 function render(){
  lang=['ru','en'].includes(s.lang)?s.lang:systemLanguage();document.documentElement.lang=lang;brand.textContent=document.title=t('Вечер вместе','Evening Together');
  language.setAttribute('aria-label',t('Язык','Language'));language.innerHTML='<option value="ru">Русский</option><option value="en">English</option>';language.value=lang;
  app.className=view==='play'?'tv':'';
+ if(view==='history'){historyScreen();return}
+ if(view==='guests'){guestsScreen();return}
+ if(view==='ai'){aiScreen();return}
  if(view==='settings'){settings();return}
  const c=catalog[guestTopic??s.plan[current]],title=t(c[1],c[2]);
  if(view==='play'){play(c);return}
  if(view==='detail'){renderEvening(c,title);return}
  let next=s.plan.findIndex((_,i)=>iso(date(i))>=iso(today));if(next<0)next=s.plan.length-1;
- const n=catalog[s.plan[next]];app.innerHTML='<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+t(n[1],n[2])+'</h1><p>'+t(n[5],n[6])+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+t(catalog[id][1],catalog[id][2])+'</strong><span>→</span></button>').join('')
+ const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
+ const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML='<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -82,24 +198,27 @@ function toggleShort(){
  render()
 }
 function roles(){
- if(guestTopic!==null||!s.people.length)return '';
- const items=s.people.map((person,i)=>{
+ const attending=[...s.people,...guests()];
+ if(guestTopic!==null||!attending.length)return '';
+ const items=attending.map((person,i)=>{
   const role=formats[person.format]||formats.read;
   const name=person.name.trim()||t('Участник ','Member ')+(i+1);
-  return '<li><strong>'+esc(name)+'</strong><span>'+t(role[2],role[3])+'</span></li>'
+  return '<li><strong>'+esc(name)+(i>=s.people.length?' · '+t('гость','guest'):'')+'</strong><span>'+t(role[2],role[3])+'</span></li>'
  });
  return '<section class="panel"><h2>'+t('Кто чем поможет','Everyone has a part')+'</h2><ul class="roles">'+items.join('')+'</ul></section>'
 }
 function renderEvening(c,title){
+ const idea=savedIdea();
+ if(idea)title=esc(idea.title);
  const dateLabel=guestTopic===null?fmt(current):t('Общая тема','Shared topic');
  const controls=[btn(t('Начать вечер →','Start evening →'),'start()',true)];
  if(s.minutes>30)controls.push(btn(shortEvening()?t('Вернуть ','Restore ')+s.minutes+t(' мин',' min'):t('Сократить до 30 минут','Shorten to 30 minutes'),'toggleShort()'));
  const outline=steps(c).map(([label,description,minutes],index)=>{
   const link=index===1?'<p>'+chapterLink(c)+'</p>':'';
-  return '<li><div><strong>'+label+'</strong><p>'+description+'</p>'+link+'</div><small>'+minutes+t(' мин',' min')+'</small></li>'
+  return '<li><div><strong>'+label+'</strong><p>'+esc(description)+'</p>'+link+'</div><small>'+minutes+t(' мин',' min')+'</small></li>'
  }).join('');
  app.innerHTML=btn(t('← План','← Planner'),"go('home')")+
-  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+t(c[5],c[6])+'</p><div class="row">'+controls.join('')+'</div></section>'+
+  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+(idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+btn(t('Идеи с ИИ','AI ideas'),'openAI()'):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
   '<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
   '<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section></aside></div>'+
   '<div class="row">'+btn(t('Заменить тему','Change topic'),'swap()')+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
@@ -107,26 +226,29 @@ function renderEvening(c,title){
 
 function steps(c){
  const snack=s.snack?10:0,active=duration()-snack,read=Math.round(active*.30),discuss=Math.round(active*.25);
- return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+t(c[5],c[6]),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[t('Поговорим','Talk together'),t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
+ const idea=savedIdea();
+ return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[t('Поговорим','Talk together'),idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
 }
-function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+x[1]+'</p>'+(step===1?chapterLink(c):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
-function go(v){if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
+function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?chapterLink(c):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
+function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
 function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
-function move(n){step+=n;if(step>=steps(catalog[guestTopic??s.plan[current]]).length)go('home');else render()}
+function move(n){step+=n;if(step>=steps(catalog[guestTopic??s.plan[current]]).length){recordEvening();go('home')}else render()}
 function swap(){if(guestTopic!==null){guestTopic=(guestTopic+1)%catalog.length;render();return}let id=s.plan[current];do{id=(id+1)%catalog.length}while(s.plan.length<catalog.length&&s.plan.includes(id));const j=s.plan.indexOf(id);if(j>=0)s.plan[j]=s.plan[current];s.plan[current]=id;save();render()}
 function shareTopic(){
  const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current]);
- const msg=location.protocol==='file:'?t('Для отправки скопируйте программу','Copy the outline to share'):t('Ссылка на тему','Topic link');
- const value=location.protocol==='file:'?[document.title,...steps(catalog[guestTopic??s.plan[current]]).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
+ const copyOutline=location.protocol==='file:'||!!savedIdea();
+ const msg=copyOutline?t('Для отправки скопируйте программу','Copy the outline to share'):t('Ссылка на тему','Topic link');
+ const value=copyOutline?[savedIdea()?.title||document.title,...steps(catalog[guestTopic??s.plan[current]]).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
  sharebox.innerHTML=field(msg,'<input readonly value="'+esc(value)+'">');const input=sharebox.querySelector('input');input.focus();input.select()
 }
 function edit(){draft=s.people.map(p=>({...p}));if(!draft.length)draft.push({name:'',topic:'nature'});go('settings')}
-function people(){return draft.map((p,i)=>'<fieldset><legend>'+t('Участник ','Member ')+(i+1)+'</legend>'+field(t('Имя или роль','Name or role'),'<input maxlength="40" value="'+esc(p.name)+'" oninput="draft['+i+'].name=this.value">')+field(t('Что тебе интересно?','What interests you?'),'<select onchange="draft['+i+'].topic=this.value">'+topics.map((v,j)=>'<option value="'+v+'" '+(v===p.topic?'selected':'')+'>'+t(...options[j])+'</option>').join('')+'</select>')+field(t('Как хочется участвовать?','How would you like to take part?'),'<select onchange="draft['+i+'].format=this.value">'+Object.entries(formats).map(([key,f])=>'<option value="'+key+'" '+(key===(p.format||'read')?'selected':'')+'>'+t(f[0],f[1])+'</option>').join('')+'</select>')+btn(t('Убрать','Remove'),'draft.splice('+i+',1);members.innerHTML=people()')+'</fieldset>').join('')}
+function people(){return draft.map((p,i)=>'<fieldset><legend>'+t('Участник ','Member ')+(i+1)+'</legend>'+field(t('Имя или роль','Name or role'),'<input maxlength="40" value="'+esc(p.name)+'" oninput="draft['+i+'].name=this.value">')+field(t('Возраст (по желанию)','Age (optional)'),'<input type="number" inputmode="numeric" min="0" max="120" step="1" value="'+esc(p.age??'')+'" oninput="draft['+i+'].age=this.value">')+field(t('Что тебе интересно?','What interests you?'),'<select onchange="draft['+i+'].topic=this.value">'+topics.map((v,j)=>'<option value="'+v+'" '+(v===p.topic?'selected':'')+'>'+t(...options[j])+'</option>').join('')+'</select>')+field(t('Как хочется участвовать?','How would you like to take part?'),'<select onchange="draft['+i+'].format=this.value">'+Object.entries(formats).map(([key,f])=>'<option value="'+key+'" '+(key===(p.format||'read')?'selected':'')+'>'+t(f[0],f[1])+'</option>').join('')+'</select>')+btn(t('Убрать','Remove'),'draft.splice('+i+',1);members.innerHTML=people()')+'</fieldset>').join('')}
 function settings(){app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('Наша семья','Our family')+'</h1><div class="panel"><h2>'+t('Интересы каждого','Everyone’s interests')+'</h2><div id="members">'+people()+'</div>'+btn(t('+ Участник','+ Family member'),"addMember()")+'</div><div class="panel">'+field(t('Первый вечер','First evening'),'<input type="date" required id="first" value="'+s.start+'">')+field(t('Недель','Weeks'),select('weeks',[4,8,12].map(v=>[v,v]),s.weeks))+field(t('Продолжительность','Duration'),select('mins',[30,40,60,75,90].map(v=>[v,v+t(' мин',' min')]),s.minutes))+field(t('Перекус','Snack break'),select('snack',[[0,t('Без перерыва','No break')],[1,t('10 минут','10 minutes')]],+!!s.snack))+'</div>'+btn(t('Составить план','Build plan'),'applyPlan()',true)+'<p><a target="_blank" rel="noopener" href="'+article()+'">'+t('Идеи для семейного поклонения · WOL','Family worship ideas · WOL')+' ↗</a></p>'}
 function addMember(){draft.push({name:'',topic:topics[draft.length%4]});members.innerHTML=people();members.lastElementChild.querySelector('input').focus()}
-function applyPlan(){if(!first.reportValidity())return;s.people=draft;s.weeks=+weeks.value;s.minutes=+mins.value;s.snack=snack.value==='1';s.start=first.value;s.plan=makePlan();current=0;save();go('home')}
+function applyPlan(){if(!validPeople()||!first.reportValidity())return;s.people=draft;s.weeks=+weeks.value;s.minutes=+mins.value;s.snack=snack.value==='1';s.start=first.value;s.plan=makePlan();current=0;save();go('home')}
 language.onchange=()=>{
+ if(aiRequest){aiRequest.abort();aiRequest=null}
  const pending=view==='settings'?[first.value,weeks.value,mins.value,snack.value]:null;
  s.lang=language.value;
  save();
