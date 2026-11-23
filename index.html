@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evening Together</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#193e35;font:17px/1.5 "DM Sans",system-ui,sans-serif}header,main{max-width:1100px;margin:auto;padding:22px clamp(16px,4vw,50px)}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d5dbd0;gap:12px}.brand{font:600 clamp(18px,3vw,28px) Georgia,serif}.brand b{color:#b46038;margin-right:8px}h1,h2{font:normal clamp(30px,5vw,62px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:clamp(26px,3vw,38px)}button,select,input,a.action{font:inherit;color:inherit;background:#fffdf7;border:1px solid #b8c4b9;border-radius:10px;padding:10px 14px;max-width:100%}button,a.action{cursor:pointer}button:hover,a.action:hover{background:#e0eadf}button.primary{background:#205547;color:white;border-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:4px solid #cb772e;outline-offset:3px}.hero{padding:clamp(24px,5vw,58px);border-radius:22px;background:#dce9da;margin:12px 0 28px}.hero h1{max-width:810px}.meta{font-size:.88em;color:#436454;font-weight:650}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.week{display:grid;grid-template-columns:minmax(75px,110px) 1fr auto;align-items:center;text-align:left;width:100%;margin:8px 0;gap:12px;background:#fffdf8;padding:16px}.date{color:#596c60;font-size:.88em}.panel{background:#fffdf8;border:1px solid #d7dcd1;padding:clamp(16px,4vw,34px);border-radius:18px;margin:15px 0}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px 10px 10px 0}fieldset{border:1px solid #c8d1c5;border-radius:12px;margin:14px 0;padding:12px}.tv{font-size:clamp(22px,3vw,44px)}.tv h1{font-size:clamp(38px,5.5vw,90px)}.tv button,.tv a{margin:5px}.tv .hero{min-height:48vh}.action{display:inline-block;text-decoration:none}button:disabled{opacity:.45;cursor:default}header select{font-size:15px}small{display:block}a{color:#205547}@media(max-width:520px){.week{grid-template-columns:70px 1fr auto}.hero{padding:22px}header{padding:14px}.brand b{margin-right:3px}}@media(min-width:1500px){header,main{max-width:80vw}body{font-size:22px}}
-.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
 const catalog=[
 ['nature','Забота в маленьких деталях','Care in the little things','Матфея 6:26','Matthew 6:26','Какую птицу ты заметил сегодня?','Which bird caught your eye today?','Нарисуйте птицу по памяти. Обсудите, почему Иисус обратил внимание на птиц.','Sketch a bird from memory. Discuss why Jesus drew attention to birds.'],
 ['friends','Первый шаг к миру','The first step toward peace','Колоссянам 3:13','Colossians 3:13','Какие слова помогают тебе помириться?','What words help you make peace?','Разыграйте ссору двух вымышленных соседей и придумайте два добрых окончания.','Act out a disagreement between two imaginary neighbours and try two kind endings.'],
@@ -109,6 +109,18 @@ function aiScreen(){
  document.getElementById('apiKey').placeholder=keyForProvider()?t('Ключ сохранён · введите фразу ниже','Key saved · enter passphrase below'):'';document.getElementById('rememberKey').checked=!!keyForProvider();refreshPrompt()
 }
 function forgetKey(){localStorage.removeItem(keyPrefix+provider);document.getElementById('apiKey').value='';document.getElementById('rememberKey').checked=false;document.getElementById('apiKey').placeholder='';document.getElementById('keyPhrase').value=''}
+async function requestIdeas(selectedProvider,key,prompt,signal){
+ const gemini=selectedProvider==='gemini';
+ const url=gemini?'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent':'https://api.x.ai/v1/chat/completions';
+
+ const body=gemini?{contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json'}}:{model:'grok-4.3',messages:[{role:'user',content:prompt}]};
+  const headers=gemini?{'x-goog-api-key':key}:{Authorization:'Bearer '+key};
+  const result=await fetch(url,{method:'POST',redirect:'error',credentials:'omit',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify(body),signal});
+  if(!result.ok)throw Error(String(result.status));
+  const data=await result.json();
+  const raw=gemini?data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text).join(''):data.choices?.[0]?.message?.content;
+  return JSON.parse(String(raw).trim().replace(/^```(?:json)?\s*|\s*```$/gi,''));
+}
 async function generateIdeas(){
  if(aiRequest)return;
  const get=id=>document.getElementById(id),status=get('aiStatus');
@@ -116,10 +128,7 @@ async function generateIdeas(){
  const stored=keyForProvider(),remember=get('rememberKey').checked,phrase=get('keyPhrase').value;
  if((remember||(!key&&stored))&&!phrase){status.textContent=t('Введите парольную фразу.','Enter the passphrase.');return}
  if(!key&&!stored){status.textContent=t('Введите свой API-ключ.','Enter your API key.');return}
- const prompt=aiPrompt(),gemini=provider==='gemini';
- const url=gemini?'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent':'https://api.x.ai/v1/chat/completions';
-
- const body=gemini?{contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json'}}:{model:'grok-4.3',messages:[{role:'user',content:prompt}]};
+ const prompt=aiPrompt();
  const controller=new AbortController();aiRequest=controller;
  const timeout=setTimeout(()=>controller.abort(),60000);
  try{
@@ -133,13 +142,8 @@ async function generateIdeas(){
   }
   if(controller.signal.aborted||!status.isConnected)return;
   if(!remember)localStorage.removeItem(keyPrefix+selectedProvider);
-  const headers=gemini?{'x-goog-api-key':key}:{Authorization:'Bearer '+key};
   get('aiChoices').textContent='';status.textContent=t('Готовим варианты…','Preparing ideas…');
-  const result=await fetch(url,{method:'POST',redirect:'error',credentials:'omit',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify(body),signal:controller.signal});
-  if(!result.ok)throw Error(String(result.status));
-  const data=await result.json();
-  const raw=gemini?data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text).join(''):data.choices?.[0]?.message?.content;
-  const items=JSON.parse(String(raw).trim().replace(/^```(?:json)?\s*|\s*```$/gi,''));
+  const items=await requestIdeas(selectedProvider,key,prompt,controller.signal);
   if(!Array.isArray(items)||items.length!==3||items.some(i=>!['title','question','discuss','activity'].every(k=>typeof i?.[k]==='string'&&i[k].trim()&&i[k].length<=3000)))throw Error('format');
   if(!status.isConnected)return;
   aiResults=items;status.textContent=t('Выберите вариант для этого вечера.','Choose an outline for this evening.');
@@ -154,10 +158,111 @@ function useIdea(index){
 }
 function restoreOutline(){delete s.ideas[eveningDate()];save();render()}
 
+function beginSurvey(){
+ if(s.people.length){edit();return}
+ s.survey=s.survey||[];save();go('survey')
+}
+function* familyInterview(){
+ const people=[];
+ const choose=(prompt,choices)=>({prompt,choices});
+ const numberChoices=values=>values.map(value=>[String(value),String(value)]);
+ let more=true;
+ while(more){
+  const name=yield {prompt:people.length?t('Передайте телефон следующему участнику. Как к вам обращаться?','Pass the phone to the next person. What should we call you?'):t('Кто первым расскажет о себе? Можно указать имя или роль в семье.','Who would like to go first? Enter your name or your role in the family.'),type:'text',limit:40};
+  const age=yield {prompt:t('Сколько вам лет? Можно пропустить.','How old are you? You can skip this.'),type:'number',optional:true};
+  const child=age!==''&&Number(age)<13;
+  const topic=yield choose(child?t('Про что тебе было бы интересно узнать?','What would you like to explore?'):t('Какая тема вам сейчас ближе?','Which topic interests you most right now?'),topics.map((id,i)=>[id,t(...options[i])]));
+  const format=yield choose(child?t('Что ты хочешь делать вместе со всеми?','What would you like to do together?'):t('Как вы хотели бы участвовать в вечере?','How would you like to take part?'),Object.entries(formats).map(([id,f])=>[id,t(f[0],f[1])]));
+  const question=yield {coach:{topic,format,child},prompt:child?t('О чём ты хочешь спросить семью?','What would you like to ask your family?'):t('Есть ли вопрос, который вы хотели бы обсудить всей семьёй?','Is there a question you would like to discuss as a family?'),type:'text',limit:240,optional:true};
+  people.push({name,age,topic,format,question});
+  more=(yield choose(t('Кто ещё будет участвовать?','Who else is joining?'),[['add',t('Передать телефон','Pass the phone')],['done',t('Это все участники','Everyone is here')]]))==='add'
+ }
+ const start=yield {prompt:t('На какой день запланируем первый вечер?','When would you like your first evening to be?'),type:'date',initial:s.start};
+ const minutes=yield choose(t('Сколько минут удобно выделить на вечер?','How many minutes work for your family?'),numberChoices([30,40,60,75,90]));
+ const snack=yield choose(t('Включить в это время перерыв на перекус?','Include a snack break within that time?'),[['yes',t('Да, 10 минут','Yes, 10 minutes')],['no',t('Без перерыва','No break')]]);
+ const weeks=yield choose(t('На сколько недель составить план?','How many weeks shall we plan?'),numberChoices([4,8,12]));
+ return {people,start,minutes:Number(minutes),snack:snack==='yes',weeks:Number(weeks)}
+}
+function surveyState(){
+ const flow=familyInterview(),messages=[];
+ let state=flow.next();
+ for(const answer of s.survey||[]){
+  if(state.done)break;
+  const q=state.value;
+  const display=q.choices?q.choices.find(([value])=>value===answer)?.[1]:answer;
+  messages.push([q.prompt,display||t('Пропущено','Skipped')]);state=flow.next(answer)
+ }
+ return {messages,state}
+}
+function surveyAnswer(value){
+ if(view!=='survey')return;
+ s.survey.push(value);save();render()
+}
+function surveyBack(){s.survey.pop();save();render()}
+function surveySubmit(event){
+ event.preventDefault();const input=event.target.elements.answer;
+ const value=input.value.trim();if(!value&&!surveyState().state.value.optional){input.focus();return}
+ surveyAnswer(value)
+}
+function finishSurvey(){
+ const {state}=surveyState();if(!state.done||s.people.length)return;
+ Object.assign(s,state.value);delete s.survey;s.plan=makePlan();save();detail(0)
+}
+function coachFormOpen(details){if(!details.lastElementChild.childElementCount)coachForm(details.lastElementChild)}
+function coachForm(box){
+ box.innerHTML='<p>'+t('ИИ предложит три вопроса для обсуждения. Провайдер получит только выбранные интерес, формат занятия и категорию «детский / общий».','AI will suggest three discussion questions. Only the interest, activity preference and child/general category go to the provider.')+'</p>'+
+ field(t('Провайдер','Provider'),select('coachProvider',Object.entries(providers),provider))+
+ field('API key','<input id="coachKey" type="password" autocomplete="off">')+
+ btn(t('Получить вопросы','Suggest questions'),'coachQuestions()')+'<p role="status" id="coachStatus"></p>'
+}
+async function coachQuestions(){
+ if(aiRequest)return;
+ const get=id=>document.getElementById(id),status=get('coachStatus'),key=get('coachKey').value.trim();
+ if(!key){status.textContent=t('Введите ключ для одного запроса.','Enter a key for this request.');return}
+ const {coach}=surveyState().state.value;
+ const prompt='Suggest three warm, distinct questions a family member could ask during Bible-based family worship. Return only a JSON array of three plain strings in '+(lang==='ru'?'Russian':'English')+'. Interest: '+coach.topic+'. Participation: '+coach.format+'. Audience: '+(coach.child?'child':'general')+'.';
+ const controller=new AbortController();aiRequest=controller;
+ const timer=setTimeout(()=>controller.abort(),45000);
+ status.textContent=t('Подбираем вопросы…','Preparing questions…');
+ try{
+  const items=await requestIdeas(get('coachProvider').value,key,prompt,controller.signal);
+  if(!status.isConnected)return;
+  if(!Array.isArray(items)||items.length!==3||items.some(x=>typeof x!=='string'||!x.trim()||x.length>240))throw Error();
+  const box=get('coachBox').lastElementChild;box.textContent='';
+  for(const question of items){const button=document.createElement('button');button.textContent=question;button.onclick=()=>surveyAnswer(question);box.appendChild(button)}
+ }catch{status.textContent=t('Запрос не удался. Можно ввести свой вопрос или пропустить шаг.','Request failed. Enter your own question or skip this step.')}
+ finally{clearTimeout(timer);if(aiRequest===controller)aiRequest=null}
+}
+function surveyScreen(){
+ const {messages,state}=surveyState(),q=state.value;
+ const previous=messages.map(([question,answer])=>'<p class="bubble">'+esc(question)+'</p><p class="reply">'+esc(answer)+'</p>').join('');
+ let entry='';
+ if(state.done){
+  entry='<h2>'+t('Ваш первый план','Your first plan')+'</h2><ul>'+q.people.map(p=>'<li>'+esc(p.name)+' · '+esc(t(...options[topics.indexOf(p.topic)]))+' · '+esc(t(formats[p.format][0],formats[p.format][1]))+'</li>').join('')+'</ul><p>'+esc(q.start)+' · '+q.minutes+t(' мин',' min')+' · '+q.weeks+t(' нед.',' weeks')+'</p>'+btn(t('Сохранить и открыть первый вечер','Save and open first evening'),'finishSurvey()',true)
+ }else{
+  entry='<h2>'+esc(q.prompt)+'</h2>';
+  if(q.choices)entry+='<div class="row">'+q.choices.map(([value,label])=>btn(esc(label),"surveyAnswer('"+value+"')")).join('')+'</div>';
+  else entry+='<form class="row" onsubmit="surveySubmit(event)"><input aria-label="'+esc(q.prompt)+'" name="answer" type="'+q.type+'" '+(q.type==='number'?'min="0" max="120" step="1"':q.type==='text'?'maxlength="'+q.limit+'"':'')+' value="'+esc(q.initial||'')+'" '+(q.optional?'':'required')+'><button class="primary">'+t('Ответить','Reply')+'</button></form>';
+  if(q.coach)entry+='<details id="coachBox"><summary onclick="if(!this.parentElement.open)coachFormOpen(this.parentElement)">'+t('Подсказать вопрос с ИИ','Suggest a question with AI')+'</summary><div></div></details>';
+  if(q.optional)entry+=btn(t('Пропустить','Skip'),"surveyAnswer('')")
+ }
+ app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<section class="survey"><h1>'+t('Знакомство с семьёй','Meet your family')+'</h1>'+(messages.length?'<details><summary>'+t('Предыдущие ответы','Previous replies')+' ('+messages.length+')</summary>'+previous+'</details><p class="reply">'+esc(messages[messages.length-1][1])+'</p>':'')+'<div class="panel" aria-live="polite">'+entry+'</div>'+(messages.length?btn(t('Изменить последний ответ','Change last reply'),'surveyBack()'):'')+'</section>'
+}
+function welcome(){
+ const label=s.survey?.length?t('Продолжить знакомство','Continue introduction'):t('Начать знакомство','Meet the family');
+ return '<section class="hero"><h1>'+t('Каким будет ваш семейный вечер?','What would your family evening look like?')+'</h1><p>'+t('Начните с короткой беседы. Передавайте телефон по кругу: каждый выберет тему, занятие и свой вопрос. Ответы сохраняются на этом устройстве.','Start with a short conversation. Pass the phone around so everyone can choose a topic, an activity and a question. Replies are saved on this device.')+'</p>'+btn(label,'beginSurvey()',true)+'</section>'
+}
+function familyQuestion(){
+ if(guestTopic!==null||!s.people.length)return '';
+ const person=s.people[current%s.people.length];
+ return person.question?' '+t('Семейный вопрос: ','Family question: ')+person.question:''
+}
+
 function render(){
  lang=['ru','en'].includes(s.lang)?s.lang:systemLanguage();document.documentElement.lang=lang;brand.textContent=document.title=t('Вечер вместе','Evening Together');
  language.setAttribute('aria-label',t('Язык','Language'));language.innerHTML='<option value="ru">Русский</option><option value="en">English</option>';language.value=lang;
  app.className=view==='play'?'tv':'';
+ if(view==='survey'){surveyScreen();return}
  if(view==='history'){historyScreen();return}
  if(view==='guests'){guestsScreen();return}
  if(view==='ai'){aiScreen();return}
@@ -167,7 +272,7 @@ function render(){
  if(view==='detail'){renderEvening(c,title);return}
  let next=s.plan.findIndex((_,i)=>iso(date(i))>=iso(today));if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML='<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
+ const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -227,7 +332,7 @@ function renderEvening(c,title){
 function steps(c){
  const snack=s.snack?10:0,active=duration()-snack,read=Math.round(active*.30),discuss=Math.round(active*.25);
  const idea=savedIdea();
- return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[t('Поговорим','Talk together'),idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
+ return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
 }
 function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?chapterLink(c):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
@@ -243,10 +348,10 @@ function shareTopic(){
  sharebox.innerHTML=field(msg,'<input readonly value="'+esc(value)+'">');const input=sharebox.querySelector('input');input.focus();input.select()
 }
 function edit(){draft=s.people.map(p=>({...p}));if(!draft.length)draft.push({name:'',topic:'nature'});go('settings')}
-function people(){return draft.map((p,i)=>'<fieldset><legend>'+t('Участник ','Member ')+(i+1)+'</legend>'+field(t('Имя или роль','Name or role'),'<input maxlength="40" value="'+esc(p.name)+'" oninput="draft['+i+'].name=this.value">')+field(t('Возраст (по желанию)','Age (optional)'),'<input type="number" inputmode="numeric" min="0" max="120" step="1" value="'+esc(p.age??'')+'" oninput="draft['+i+'].age=this.value">')+field(t('Что тебе интересно?','What interests you?'),'<select onchange="draft['+i+'].topic=this.value">'+topics.map((v,j)=>'<option value="'+v+'" '+(v===p.topic?'selected':'')+'>'+t(...options[j])+'</option>').join('')+'</select>')+field(t('Как хочется участвовать?','How would you like to take part?'),'<select onchange="draft['+i+'].format=this.value">'+Object.entries(formats).map(([key,f])=>'<option value="'+key+'" '+(key===(p.format||'read')?'selected':'')+'>'+t(f[0],f[1])+'</option>').join('')+'</select>')+btn(t('Убрать','Remove'),'draft.splice('+i+',1);members.innerHTML=people()')+'</fieldset>').join('')}
+function people(){return draft.map((p,i)=>'<fieldset><legend>'+t('Участник ','Member ')+(i+1)+'</legend>'+field(t('Имя или роль','Name or role'),'<input maxlength="40" value="'+esc(p.name)+'" oninput="draft['+i+'].name=this.value">')+field(t('Возраст (по желанию)','Age (optional)'),'<input type="number" inputmode="numeric" min="0" max="120" step="1" value="'+esc(p.age??'')+'" oninput="draft['+i+'].age=this.value">')+field(t('Что тебе интересно?','What interests you?'),'<select onchange="draft['+i+'].topic=this.value">'+topics.map((v,j)=>'<option value="'+v+'" '+(v===p.topic?'selected':'')+'>'+t(...options[j])+'</option>').join('')+'</select>')+field(t('Как хочется участвовать?','How would you like to take part?'),'<select onchange="draft['+i+'].format=this.value">'+Object.entries(formats).map(([key,f])=>'<option value="'+key+'" '+(key===(p.format||'read')?'selected':'')+'>'+t(f[0],f[1])+'</option>').join('')+'</select>')+(view==='settings'?field(t('Мой вопрос для семьи','My question for the family'),'<input maxlength="240" value="'+esc(p.question||'')+'" oninput="draft['+i+'].question=this.value">'):'')+btn(t('Убрать','Remove'),'draft.splice('+i+',1);members.innerHTML=people()')+'</fieldset>').join('')}
 function settings(){app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('Наша семья','Our family')+'</h1><div class="panel"><h2>'+t('Интересы каждого','Everyone’s interests')+'</h2><div id="members">'+people()+'</div>'+btn(t('+ Участник','+ Family member'),"addMember()")+'</div><div class="panel">'+field(t('Первый вечер','First evening'),'<input type="date" required id="first" value="'+s.start+'">')+field(t('Недель','Weeks'),select('weeks',[4,8,12].map(v=>[v,v]),s.weeks))+field(t('Продолжительность','Duration'),select('mins',[30,40,60,75,90].map(v=>[v,v+t(' мин',' min')]),s.minutes))+field(t('Перекус','Snack break'),select('snack',[[0,t('Без перерыва','No break')],[1,t('10 минут','10 minutes')]],+!!s.snack))+'</div>'+btn(t('Составить план','Build plan'),'applyPlan()',true)+'<p><a target="_blank" rel="noopener" href="'+article()+'">'+t('Идеи для семейного поклонения · WOL','Family worship ideas · WOL')+' ↗</a></p>'}
 function addMember(){draft.push({name:'',topic:topics[draft.length%4]});members.innerHTML=people();members.lastElementChild.querySelector('input').focus()}
-function applyPlan(){if(!validPeople()||!first.reportValidity())return;s.people=draft;s.weeks=+weeks.value;s.minutes=+mins.value;s.snack=snack.value==='1';s.start=first.value;s.plan=makePlan();current=0;save();go('home')}
+function applyPlan(){if(!validPeople()||!first.reportValidity())return;if(draft.length)delete s.survey;s.people=draft;s.weeks=+weeks.value;s.minutes=+mins.value;s.snack=snack.value==='1';s.start=first.value;s.plan=makePlan();current=0;save();go('home')}
 language.onchange=()=>{
  if(aiRequest){aiRequest.abort();aiRequest=null}
  const pending=view==='settings'?[first.value,weeks.value,mins.value,snack.value]:null;
