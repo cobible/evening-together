@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evening Together</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#193e35;font:17px/1.5 "DM Sans",system-ui,sans-serif}header,main{max-width:1100px;margin:auto;padding:22px clamp(16px,4vw,50px)}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d5dbd0;gap:12px}.brand{font:600 clamp(18px,3vw,28px) Georgia,serif}.brand b{color:#b46038;margin-right:8px}h1,h2{font:normal clamp(30px,5vw,62px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:clamp(26px,3vw,38px)}button,select,input,a.action{font:inherit;color:inherit;background:#fffdf7;border:1px solid #b8c4b9;border-radius:10px;padding:10px 14px;max-width:100%}button,a.action{cursor:pointer}button:hover,a.action:hover{background:#e0eadf}button.primary{background:#205547;color:white;border-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:4px solid #cb772e;outline-offset:3px}.hero{padding:clamp(24px,5vw,58px);border-radius:22px;background:#dce9da;margin:12px 0 28px}.hero h1{max-width:810px}.meta{font-size:.88em;color:#436454;font-weight:650}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.week{display:grid;grid-template-columns:minmax(75px,110px) 1fr auto;align-items:center;text-align:left;width:100%;margin:8px 0;gap:12px;background:#fffdf8;padding:16px}.date{color:#596c60;font-size:.88em}.panel{background:#fffdf8;border:1px solid #d7dcd1;padding:clamp(16px,4vw,34px);border-radius:18px;margin:15px 0}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px 10px 10px 0}fieldset{border:1px solid #c8d1c5;border-radius:12px;margin:14px 0;padding:12px}.tv{font-size:clamp(22px,3vw,44px)}.tv h1{font-size:clamp(38px,5.5vw,90px)}.tv button,.tv a{margin:5px}.tv .hero{min-height:48vh}.action{display:inline-block;text-decoration:none}button:disabled{opacity:.45;cursor:default}header select{font-size:15px}small{display:block}a{color:#205547}@media(max-width:520px){.week{grid-template-columns:70px 1fr auto}.hero{padding:22px}header{padding:14px}.brand b{margin-right:3px}}@media(min-width:1500px){header,main{max-width:80vw}body{font-size:22px}}
-.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
 const catalog=[
 ['nature','Забота в маленьких деталях','Care in the little things','Матфея 6:26','Matthew 6:26','Какую птицу ты заметил сегодня?','Which bird caught your eye today?','Нарисуйте птицу по памяти. Обсудите, почему Иисус обратил внимание на птиц.','Sketch a bird from memory. Discuss why Jesus drew attention to birds.'],
 ['friends','Первый шаг к миру','The first step toward peace','Колоссянам 3:13','Colossians 3:13','Какие слова помогают тебе помириться?','What words help you make peace?','Разыграйте ссору двух вымышленных соседей и придумайте два добрых окончания.','Act out a disagreement between two imaginary neighbours and try two kind endings.'],
@@ -109,17 +109,54 @@ function aiScreen(){
  document.getElementById('apiKey').placeholder=keyForProvider()?t('Ключ сохранён · введите фразу ниже','Key saved · enter passphrase below'):'';document.getElementById('rememberKey').checked=!!keyForProvider();refreshPrompt()
 }
 function forgetKey(){localStorage.removeItem(keyPrefix+provider);document.getElementById('apiKey').value='';document.getElementById('rememberKey').checked=false;document.getElementById('apiKey').placeholder='';document.getElementById('keyPhrase').value=''}
-async function requestIdeas(selectedProvider,key,prompt,signal){
+function aiErrorText(error,providerName){
+ const prefix=(providers[providerName]||'AI')+' · ';
+ const messages={
+  key:['Проверьте, что ключ создан для выбранного провайдера и действует.','Check that the key is valid and was issued by the selected provider.'],
+  access:['Провайдер отклонил доступ. Проверьте ограничения ключа, доступ к API и регион аккаунта.','Access denied. Check key restrictions, API access and account region.'],
+  quota:['Исчерпан лимит запросов. Проверьте квоту в кабинете провайдера или попробуйте позднее.','Request limit reached. Check your provider quota or try later.'],
+  billing:['Проверьте баланс и настройки оплаты API у провайдера.','Check your API credit balance and billing settings.'],
+  model:['Модель недоступна для этого ключа. Проверьте доступ к моделям у провайдера.','Model unavailable for this key. Check model access with the provider.'],
+  format:['Ответ пришёл в неожиданном формате. Попробуйте ещё раз.','Unexpected response format. Please try again.'],
+  timeout:['Истекло время ожидания. Повторите запрос.','Request timed out. Please try again.'],
+  network:['Браузер не получил ответ. Проверьте соединение и доступ к API из этой сети.','No response reached the browser. Check the connection and API access from this network.'],
+  server:['Сервис временно недоступен. Повторите позже.','Service temporarily unavailable. Try again later.'],
+  pass:['Не удалось открыть сохранённый ключ. Проверьте парольную фразу.','Could not unlock the saved key. Check your passphrase.'],
+  request:['Провайдер отклонил запрос. Проверьте настройки API.','The provider rejected the request. Check API settings.']
+ };
+ const reason=error.name==='AbortError'?'timeout':error.name==='OperationError'?'pass':error instanceof TypeError?'network':error instanceof SyntaxError?'format':error.message;
+ return prefix+t(...(messages[reason]||messages.request))+(error.status?' (HTTP '+error.status+')':'')
+}
+function providerFailure(status,detail){
+ let reason='request';
+ if(status===401||/api.key.not.valid|api_key_invalid|invalid.api.key|incorrect.api.key/i.test(detail))reason='key';
+ else if(status===402||/insufficient_quota|credits|billing|balance/i.test(detail))reason='billing';
+ else if(status===429)reason='quota';
+ else if(status===403)reason='access';
+ else if(status===404)reason='model';
+ else if(status>=500)reason='server';
+ return Object.assign(Error(reason),{status})
+}
+async function requestIdeas(selectedProvider,key,prompt,signal,kind){
  const gemini=selectedProvider==='gemini';
- const url=gemini?'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent':'https://api.x.ai/v1/chat/completions';
-
- const body=gemini?{contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json'}}:{model:'grok-4.3',messages:[{role:'user',content:prompt}]};
+ const models=gemini?['gemini-3.1-flash-lite','gemini-2.5-flash']:['grok-4.3'];
+ const item=kind==='questions'?{type:'STRING'}:{type:'OBJECT',properties:Object.fromEntries(['title','question','discuss','activity'].map(k=>[k,{type:'STRING'}])),required:['title','question','discuss','activity']};
+ for(const model of models){
+  const url=gemini?'https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent':'https://api.x.ai/v1/chat/completions';
+  const body=gemini?{contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json',responseSchema:{type:'ARRAY',items:item}}}:
+   {model,messages:[{role:'user',content:prompt+' Wrap the requested array in a JSON object with the single property "items".'}],response_format:{type:'json_object'}};
   const headers=gemini?{'x-goog-api-key':key}:{Authorization:'Bearer '+key};
   const result=await fetch(url,{method:'POST',redirect:'error',credentials:'omit',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify(body),signal});
-  if(!result.ok)throw Error(String(result.status));
+  if(!result.ok){
+   const detail=await result.text();
+   if(result.status===404&&model!==models[models.length-1])continue;
+   throw providerFailure(result.status,detail)
+  }
   const data=await result.json();
   const raw=gemini?data.candidates?.[0]?.content?.parts?.filter(p=>!p.thought).map(p=>p.text).join(''):data.choices?.[0]?.message?.content;
-  return JSON.parse(String(raw).trim().replace(/^```(?:json)?\s*|\s*```$/gi,''));
+  const parsed=JSON.parse(String(raw).trim().replace(/^```(?:json)?\s*|\s*```$/gi,''));
+  return Array.isArray(parsed)?parsed:parsed?.items
+ }
 }
 async function generateIdeas(){
  if(aiRequest)return;
@@ -149,7 +186,7 @@ async function generateIdeas(){
   aiResults=items;status.textContent=t('Выберите вариант для этого вечера.','Choose an outline for this evening.');
   get('aiChoices').innerHTML=items.map((i,n)=>'<section class="panel"><h2>'+esc(i.title)+'</h2><p>'+esc(i.question)+'</p><p>'+esc(i.discuss)+'</p><p>'+esc(i.activity)+'</p>'+btn(t('Выбрать','Use outline'),'useIdea('+n+')')+'</section>').join('')
  }catch(e){
-  status.textContent=t('Не удалось получить варианты. Проверьте парольную фразу, ключ, доступ к модели, лимит и соединение.','Could not generate ideas. Check your passphrase, key, model access, quota and connection.')+(/^\d{3}$/.test(e.message)?' (HTTP '+e.message+')':'')
+  status.textContent=aiErrorText(e,provider)
  }finally{clearTimeout(timeout);if(aiRequest===controller)aiRequest=null;if(status.isConnected){get('providerSelect').disabled=false;get('includePrefs').disabled=false}}
 }
 function useIdea(index){
@@ -225,12 +262,12 @@ async function coachQuestions(){
  const timer=setTimeout(()=>controller.abort(),45000);
  status.textContent=t('Подбираем вопросы…','Preparing questions…');
  try{
-  const items=await requestIdeas(get('coachProvider').value,key,prompt,controller.signal);
+  const items=await requestIdeas(get('coachProvider').value,key,prompt,controller.signal,'questions');
   if(!status.isConnected)return;
-  if(!Array.isArray(items)||items.length!==3||items.some(x=>typeof x!=='string'||!x.trim()||x.length>240))throw Error();
+  if(!Array.isArray(items)||items.length!==3||items.some(x=>typeof x!=='string'||!x.trim()||x.length>240))throw Error('format');
   const box=get('coachBox').lastElementChild;box.textContent='';
   for(const question of items){const button=document.createElement('button');button.textContent=question;button.onclick=()=>surveyAnswer(question);box.appendChild(button)}
- }catch{status.textContent=t('Запрос не удался. Можно ввести свой вопрос или пропустить шаг.','Request failed. Enter your own question or skip this step.')}
+ }catch(e){if(status.isConnected)status.textContent=aiErrorText(e,get('coachProvider').value)}
  finally{clearTimeout(timer);if(aiRequest===controller)aiRequest=null}
 }
 function surveyScreen(){
@@ -252,6 +289,36 @@ function welcome(){
  const label=s.survey?.length?t('Продолжить знакомство','Continue introduction'):t('Начать знакомство','Meet the family');
  return '<section class="hero"><h1>'+t('Каким будет ваш семейный вечер?','What would your family evening look like?')+'</h1><p>'+t('Начните с короткой беседы. Передавайте телефон по кругу: каждый выберет тему, занятие и свой вопрос. Ответы сохраняются на этом устройстве.','Start with a short conversation. Pass the phone around so everyone can choose a topic, an activity and a question. Replies are saved on this device.')+'</p>'+btn(label,'beginSurvey()',true)+'</section>'
 }
+const discussionResources=[
+ {terms:/молит|молить|молиться|молюсь|молим|pray/i,title:['Отвечает ли Иегова на молитвы?','Does Jehovah Answer Prayers?'],video:['библиотека/видео/стань-другом-иеговы/иегова-отвечает-на-молитвы/','library/videos/become-jehovahs-friend-2/does-jehovah-answer-prayers/']},
+ {terms:/прощ|простить|обид|помир|ссор|извин|forgiv|resent|apolog|quarrel/i,title:['Как прощать','Forgiving freely'],doc:2015734},
+ {terms:/трево|беспоко|волную|страшно|страх|пережива|anxi|worry|worri|afraid/i,title:['Как справляться с беспокойством','Coping with anxiety'],doc:102001684},
+ {terms:/подруж|друж|друз|другом|друга\b|friend/i,title:['Как найти настоящих друзей?','Finding real friends'],doc:1101989332},
+ {terms:/страдани|страдать|несправедлив|допускает зло|suffer|injustice|allow evil/i,title:['Почему Бог допускает страдания?','Why does God permit suffering?'],doc:1101985026},
+ {terms:/чита.{0,30}библи|чтени.{0,30}библи|библи.{0,30}(чита|чтени)|bible.{0,25}read|read.{0,25}bible/i,title:['Как сделать чтение Библии увлекательным','Making Bible reading enjoyable'],doc:2017006},
+ {terms:/природ|творени|животны|птиц|creation|nature|animal|birds/i,title:['Что творение рассказывает об Иегове','Learning about Jehovah through creation'],doc:2023324},
+ {terms:/петь|пени[ея]|музык|песн|music|singing|songs/i,title:['Восхваляем Иегову песнями','Singing praises to Jehovah'],doc:1994322}
+];
+function questionOwner(index=current){
+ if(guestTopic!==null||!s.people.length)return null;
+ const person=s.people[index%s.people.length];
+ return person?.question?.trim()?person:null
+}
+function resourceLinks(question){
+ const matches=discussionResources.filter(r=>r.terms.test(question)).slice(0,2);
+ const links=matches.map(r=>{
+  const url=r.video?'https://www.jw.org/'+lang+'/'+t(...r.video):article(r.doc);
+  return '<p><a target="_blank" rel="noopener noreferrer" href="'+esc(url)+'">'+(r.video?t('Видео','Video'):t('Статья','Article'))+' · '+esc(t(...r.title))+' ↗</a></p>'
+ });
+ const search='https://wol.jw.org/'+t('ru/wol/s/r2/lp-u','en/wol/s/r1/lp-e')+'?q='+encodeURIComponent(question);
+ return links.join('')+'<a target="_blank" rel="noopener noreferrer" href="'+esc(search)+'">'+t('Искать этот вопрос в WOL','Search WOL for this question')+' ↗</a>'
+}
+function questionCard(person){
+ if(!person)return '';
+ return '<section class="family-question"><strong>'+t('Вопрос для семейного обсуждения','Family discussion question')+'</strong><blockquote>'+esc(person.question)+'</blockquote>'+
+ (person.name?'<p>'+esc(person.name)+'</p>':'')+resourceLinks(person.question)+'</section>'
+}
+
 function familyQuestion(){
  if(guestTopic!==null||!s.people.length)return '';
  const person=s.people[current%s.people.length];
@@ -272,7 +339,7 @@ function render(){
  if(view==='detail'){renderEvening(c,title);return}
  let next=s.plan.findIndex((_,i)=>iso(date(i))>=iso(today));if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
+ const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next))+'<h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+(questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -324,7 +391,7 @@ function renderEvening(c,title){
  }).join('');
  app.innerHTML=btn(t('← План','← Planner'),"go('home')")+
   '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+(idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+btn(t('Идеи с ИИ','AI ideas'),'openAI()'):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
-  '<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
+  questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
   '<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section></aside></div>'+
   '<div class="row">'+btn(t('Заменить тему','Change topic'),'swap()')+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
 }
@@ -332,9 +399,9 @@ function renderEvening(c,title){
 function steps(c){
  const snack=s.snack?10:0,active=duration()-snack,read=Math.round(active*.30),discuss=Math.round(active*.25);
  const idea=savedIdea();
- return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
+ return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[questionOwner()?t('Вопрос семьи','Family question'):t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
 }
-function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?chapterLink(c):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
+function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?chapterLink(c):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
 function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
@@ -361,7 +428,7 @@ language.onchange=()=>{
  if(pending)[first.value,weeks.value,mins.value,snack.value]=pending
 };
 window.addEventListener('languagechange',()=>{if(!['ru','en'].includes(s.lang))render()});
-document.addEventListener('keydown',e=>{if(view!=='play'||!e.key.startsWith('Arrow'))return;e.preventDefault();const nodes=Array.from(document.querySelectorAll('button,select'));const dir=['ArrowDown','ArrowRight'].includes(e.key)?1:-1;nodes[(nodes.indexOf(document.activeElement)+dir+nodes.length)%nodes.length].focus()});
+document.addEventListener('keydown',e=>{if(view!=='play'||!e.key.startsWith('Arrow'))return;e.preventDefault();const nodes=Array.from(document.querySelectorAll('button,select,a[href]'));const dir=['ArrowDown','ArrowRight'].includes(e.key)?1:-1;nodes[(nodes.indexOf(document.activeElement)+dir+nodes.length)%nodes.length].focus()});
 const shared=location.hash.match(/^#evening=(\d+)$/);
 if(shared && +shared[1]<catalog.length){
  guestTopic=+shared[1];current=0;
