@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evening Together</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#193e35;font:17px/1.5 "DM Sans",system-ui,sans-serif}header,main{max-width:1100px;margin:auto;padding:22px clamp(16px,4vw,50px)}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d5dbd0;gap:12px}.brand{font:600 clamp(18px,3vw,28px) Georgia,serif}.brand b{color:#b46038;margin-right:8px}h1,h2{font:normal clamp(30px,5vw,62px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:clamp(26px,3vw,38px)}button,select,input,a.action{font:inherit;color:inherit;background:#fffdf7;border:1px solid #b8c4b9;border-radius:10px;padding:10px 14px;max-width:100%}button,a.action{cursor:pointer}button:hover,a.action:hover{background:#e0eadf}button.primary{background:#205547;color:white;border-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:4px solid #cb772e;outline-offset:3px}.hero{padding:clamp(24px,5vw,58px);border-radius:22px;background:#dce9da;margin:12px 0 28px}.hero h1{max-width:810px}.meta{font-size:.88em;color:#436454;font-weight:650}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.week{display:grid;grid-template-columns:minmax(75px,110px) 1fr auto;align-items:center;text-align:left;width:100%;margin:8px 0;gap:12px;background:#fffdf8;padding:16px}.date{color:#596c60;font-size:.88em}.panel{background:#fffdf8;border:1px solid #d7dcd1;padding:clamp(16px,4vw,34px);border-radius:18px;margin:15px 0}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px 10px 10px 0}fieldset{border:1px solid #c8d1c5;border-radius:12px;margin:14px 0;padding:12px}.tv{font-size:clamp(22px,3vw,44px)}.tv h1{font-size:clamp(38px,5.5vw,90px)}.tv button,.tv a{margin:5px}.tv .hero{min-height:48vh}.action{display:inline-block;text-decoration:none}button:disabled{opacity:.45;cursor:default}header select{font-size:15px}small{display:block}a{color:#205547}@media(max-width:520px){.week{grid-template-columns:70px 1fr auto}.hero{padding:22px}header{padding:14px}.brand b{margin-right:3px}}@media(min-width:1500px){header,main{max-width:80vw}body{font-size:22px}}
-.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}.bank-entry{margin:18px 0}textarea{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid #83968a}form.panel label{display:grid}article.panel h2{overflow-wrap:anywhere;font-size:clamp(22px,3vw,32px)}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
 const catalog=[
 ['nature','Забота в маленьких деталях','Care in the little things','Матфея 6:26','Matthew 6:26','Какую птицу ты заметил сегодня?','Which bird caught your eye today?','Нарисуйте птицу по памяти. Обсудите, почему Иисус обратил внимание на птиц.','Sketch a bird from memory. Discuss why Jesus drew attention to birds.'],
 ['friends','Первый шаг к миру','The first step toward peace','Колоссянам 3:13','Colossians 3:13','Какие слова помогают тебе помириться?','What words help you make peace?','Разыграйте ссору двух вымышленных соседей и придумайте два добрых окончания.','Act out a disagreement between two imaginary neighbours and try two kind endings.'],
@@ -61,7 +61,7 @@ function recordEvening(){
  const id=guestTopic??s.plan[current],key=(guestTopic===null?eveningDate():'shared-'+iso(new Date()))+'/'+id;
  const attendees=guestTopic===null?[...s.people,...guests()]:[];
  s.history=s.history||{};
- s.history[key+'/'+Date.now()]={id,day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:savedIdea()?.title||'',outline:steps(catalog[id]).map(([label,body,time])=>[label,body,time])};
+ s.history[key+'/'+Date.now()]={id,day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||'',outline:steps(catalog[id]).map(([label,body,time])=>[label,body,time])};
  save()
 }
 function historyScreen(){
@@ -299,7 +299,61 @@ const discussionResources=[
  {terms:/природ|творени|животны|птиц|creation|nature|animal|birds/i,title:['Что творение рассказывает об Иегове','Learning about Jehovah through creation'],doc:2023324},
  {terms:/петь|пени[ея]|музык|песн|music|singing|songs/i,title:['Восхваляем Иегову песнями','Singing praises to Jehovah'],doc:1994322}
 ];
+function upcomingEvening(){
+ const now=iso(new Date());
+ return s.plan.findIndex((_,i)=>iso(date(i))>=now)
+}
+function bankQuestion(index=current){
+ if(guestTopic!==null)return null;
+ return (s.bank||[]).find(item=>item.date===iso(date(index)))||null
+}
+function openBank(){go('bank');document.getElementById('newQuestion').focus()}
+function storeQuestion(event){
+ event.preventDefault();
+ const field=event.target.elements.question;
+ const question=field.value.trim();
+ if(!question){field.focus();return}
+ s.bank=s.bank||[];
+ s.bank.unshift({question,date:null});
+ save();render()
+}
+function scheduleQuestion(index){
+ const next=upcomingEvening();
+ if(next<0)return;
+ const day=iso(date(next));
+ for(const item of s.bank){if(item.date===day)item.date=null}
+ s.bank[index].date=day;
+ save();detail(next)
+}
+function deferQuestion(index){s.bank[index].date=null;save();render()}
+function bankScreen(){
+ const next=upcomingEvening();
+ const rows=(s.bank||[]).map((item,i)=>{
+  const dateIndex=s.plan.findIndex((_,n)=>iso(date(n))===item.date);
+  const assigned=dateIndex>=0;
+  const status=assigned?fmt(dateIndex):t('На потом','For later');
+  let actions=assigned?btn(t('Открыть вечер','Open evening'),'detail('+dateIndex+')')+btn(t('Оставить на потом','Keep for later'),'deferQuestion('+i+')'):'';
+  if(next>=0&&dateIndex!==next)actions+=btn(t('Обсудить ','Discuss on ')+fmt(next),'scheduleQuestion('+i+')');
+  return '<article class="panel"><small>'+status+'</small><h2>'+esc(item.question)+'</h2><div class="row">'+actions+'</div></article>'
+ }).join('');
+ app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('Копилка вопросов','Family question box')+'</h1>'+
+  '<form class="panel" onsubmit="storeQuestion(event)">'+field(t('Что хочется обсудить вместе?','What would you like to discuss together?'),'<textarea id="newQuestion" name="question" maxlength="400" rows="2" required></textarea>')+'<div>'+btn(t('Сохранить в копилку','Save for later'),'',true)+'</div></form>'+
+  (next<0?'<p>'+t('Чтобы назначить вопрос, выберите будущую дату в настройках семьи.','Choose a future start date in family settings to schedule a question.')+'</p>':'')+rows
+}
+function bankSteps(question,base){
+ const descriptions=[
+  t('Начните с молитвы и расскажите, как возник этот вопрос.','Begin with prayer and share what prompted this question.'),
+  t('Выберите материал по вопросу ниже. Найдите в нём библейский стих и прочитайте его вместе.','Choose a resource below. Find a scripture in it and read it together.'),
+  question,
+  t('Покажите на примере, как применить прочитанное. Можно нарисовать ситуацию или разыграть сценку.','Show how you could apply what you read. Draw a situation or act it out together.'),
+  t('Каждый может поделиться ответом своими словами. Завершите молитвой.','Invite everyone to answer in their own words. Conclude with prayer.')
+ ];
+ if(s.snack)descriptions.splice(3,0,base[3][1]);
+ return base.map(([label,body,time],i)=>[label,descriptions[i],time])
+}
+
 function questionOwner(index=current){
+ const planned=bankQuestion(index);if(planned)return planned;
  if(guestTopic!==null||!s.people.length)return null;
  const person=s.people[index%s.people.length];
  return person?.question?.trim()?person:null
@@ -330,6 +384,7 @@ function render(){
  language.setAttribute('aria-label',t('Язык','Language'));language.innerHTML='<option value="ru">Русский</option><option value="en">English</option>';language.value=lang;
  app.className=view==='play'?'tv':'';
  if(view==='survey'){surveyScreen();return}
+ if(view==='bank'){bankScreen();return}
  if(view==='history'){historyScreen();return}
  if(view==='guests'){guestsScreen();return}
  if(view==='ai'){aiScreen();return}
@@ -337,9 +392,9 @@ function render(){
  const c=catalog[guestTopic??s.plan[current]],title=t(c[1],c[2]);
  if(view==='play'){play(c);return}
  if(view==='detail'){renderEvening(c,title);return}
- let next=s.plan.findIndex((_,i)=>iso(date(i))>=iso(today));if(next<0)next=s.plan.length-1;
+ let next=upcomingEvening();if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next))+'<h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+(questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
+ const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next))+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -382,26 +437,28 @@ function roles(){
 function renderEvening(c,title){
  const idea=savedIdea();
  if(idea)title=esc(idea.title);
+ const bank=bankQuestion();if(bank)title=esc(bank.question);
  const dateLabel=guestTopic===null?fmt(current):t('Общая тема','Shared topic');
  const controls=[btn(t('Начать вечер →','Start evening →'),'start()',true)];
  if(s.minutes>30)controls.push(btn(shortEvening()?t('Вернуть ','Restore ')+s.minutes+t(' мин',' min'):t('Сократить до 30 минут','Shorten to 30 minutes'),'toggleShort()'));
  const outline=steps(c).map(([label,description,minutes],index)=>{
-  const link=index===1?'<p>'+chapterLink(c)+'</p>':'';
+  const link=index===1&&!bank?'<p>'+chapterLink(c)+'</p>':'';
   return '<li><div><strong>'+label+'</strong><p>'+esc(description)+'</p>'+link+'</div><small>'+minutes+t(' мин',' min')+'</small></li>'
  }).join('');
  app.innerHTML=btn(t('← План','← Planner'),"go('home')")+
-  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+(idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+btn(t('Идеи с ИИ','AI ideas'),'openAI()'):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
+  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+(bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
   questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
-  '<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section></aside></div>'+
-  '<div class="row">'+btn(t('Заменить тему','Change topic'),'swap()')+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
+  (bank?'':'<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section>')+'</aside></div>'+
+  '<div class="row">'+(bank?btn(t('В копилку','Open question box'),"go('bank')"):btn(t('Заменить тему','Change topic'),'swap()'))+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
 }
 
 function steps(c){
  const snack=s.snack?10:0,active=duration()-snack,read=Math.round(active*.30),discuss=Math.round(active*.25);
  const idea=savedIdea();
- return [[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[questionOwner()?t('Вопрос семьи','Family question'):t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]]
+ const base=[[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[questionOwner()?t('Вопрос семьи','Family question'):t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]];
+ const planned=bankQuestion();return planned?bankSteps(planned.question,base):base
 }
-function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?chapterLink(c):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
+function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
 function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
@@ -409,9 +466,9 @@ function move(n){step+=n;if(step>=steps(catalog[guestTopic??s.plan[current]]).le
 function swap(){if(guestTopic!==null){guestTopic=(guestTopic+1)%catalog.length;render();return}let id=s.plan[current];do{id=(id+1)%catalog.length}while(s.plan.length<catalog.length&&s.plan.includes(id));const j=s.plan.indexOf(id);if(j>=0)s.plan[j]=s.plan[current];s.plan[current]=id;save();render()}
 function shareTopic(){
  const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current]);
- const copyOutline=location.protocol==='file:'||!!savedIdea();
+ const copyOutline=location.protocol==='file:'||!!savedIdea()||!!bankQuestion();
  const msg=copyOutline?t('Для отправки скопируйте программу','Copy the outline to share'):t('Ссылка на тему','Topic link');
- const value=copyOutline?[savedIdea()?.title||document.title,...steps(catalog[guestTopic??s.plan[current]]).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
+ const value=copyOutline?[bankQuestion()?.question||savedIdea()?.title||document.title,...steps(catalog[guestTopic??s.plan[current]]).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
  sharebox.innerHTML=field(msg,'<input readonly value="'+esc(value)+'">');const input=sharebox.querySelector('input');input.focus();input.select()
 }
 function edit(){draft=s.people.map(p=>({...p}));if(!draft.length)draft.push({name:'',topic:'nature'});go('settings')}
