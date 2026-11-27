@@ -410,10 +410,82 @@ function familyQuestion(){
  return person.question?' '+t('Семейный вопрос: ','Family question: ')+person.question:''
 }
 
+const backupFields=['people','start','weeks','minutes','plan','guests','ideas','history','survey','bank','snack','lang','paces','shortDates'];
+let pendingBackup=null,backupRead=0;
+function backupDocument(){
+ const family={};
+ for(const key of backupFields)if(s[key]!==undefined)family[key]=s[key];
+ return {app:'evening-together',version:1,family}
+}
+function validateBackup(doc){
+ const reject=()=>{throw Error('Invalid family backup')};
+ const obj=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
+ const str=v=>typeof v==='string';
+ const age=v=>v===undefined||v===''||((str(v)||typeof v==='number')&&/^\d{1,3}$/.test(String(v))&&Number(v)<=120);
+ const day=v=>str(v)&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&!Number.isNaN(Date.parse(v))&&new Date(v).toISOString().slice(0,10)===v;
+ const id=v=>Number.isInteger(v)&&v>=0&&v<catalog.length;
+ const array=(v,check)=>Array.isArray(v)&&v.every(check);
+ const fields=(v,allowed)=>obj(v)&&Object.keys(v).every(k=>allowed.includes(k));
+ const person=v=>fields(v,['name','age','topic','format','question'])&&str(v.name)&&age(v.age)&&topics.includes(v.topic)&&(v.format===undefined||Object.keys(formats).includes(v.format))&&(v.question===undefined||str(v.question));
+ const pace=v=>['','quiet','active','light'].includes(v);
+ const map=(v,keyCheck,valueCheck)=>v===undefined||(obj(v)&&Object.entries(v).every(([k,x])=>keyCheck(k)&&valueCheck(x)));
+ const entry=r=>fields(r,['id','day','title','minutes','attendees','outline','pace'])&&id(r.id)&&day(r.day)&&str(r.title)&&Number.isInteger(r.minutes)&&r.minutes>0&&(r.pace===undefined||pace(r.pace))&&array(r.attendees,p=>fields(p,['name','age'])&&str(p.name)&&age(p.age))&&array(r.outline,x=>Array.isArray(x)&&x.length===3&&str(x[0])&&str(x[1])&&Number.isInteger(x[2])&&x[2]>0);
+ if(!doc||doc.app!=='evening-together'||doc.version!==1||!fields(doc.family,backupFields))reject();
+ const d=doc.family;
+ if(!day(d.start)||![4,8,12].includes(d.weeks)||![30,40,60,75,90].includes(d.minutes)||!array(d.people,person)||!array(d.plan,id)||d.plan.length!==d.weeks)reject();
+ if(d.lang!==undefined&&!['auto','ru','en'].includes(d.lang)||d.snack!==undefined&&typeof d.snack!=='boolean')reject();
+ if(!map(d.guests,day,v=>array(v,person))||!map(d.paces,day,pace)||!map(d.shortDates,day,v=>typeof v==='boolean'))reject();
+ if(!map(d.ideas,day,v=>fields(v,['topic','language','title','question','activity','discuss'])&&id(v.topic)&&['en','ru'].includes(v.language)&&[v.title,v.question,v.activity,v.discuss].every(str)))reject();
+ if(!map(d.history,k=>/^(shared-)?\d{4}-\d{2}-\d{2}\/\d+(\/\d+)?$/.test(k),entry))reject();
+ if(d.bank!==undefined&&!array(d.bank,v=>fields(v,['question','date'])&&str(v.question)&&(v.date===null||day(v.date))))reject();
+ if(d.survey!==undefined){
+  if(!Array.isArray(d.survey))reject();
+  const chat=familyInterview();let turn=chat.next();
+  for(const a of d.survey){
+   if(turn.done||!str(a))reject();
+   const q=turn.value;
+   if(q.choices?!q.choices.some(([v])=>v===a):q.type==='number'?!age(a):q.type==='date'?!day(a):a.length>q.limit||!q.optional&&!a.trim())reject();
+   turn=chat.next(a)
+  }
+ }
+ return d
+}
+function downloadBackup(){
+ const blob=new Blob([JSON.stringify(backupDocument(),null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='evening-together-'+iso(new Date())+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)
+}
+function backupCounts(d){
+ return t('Участники','Participants')+' · '+d.people.length+'　'+t('Вопросы в копилке','Saved questions')+' · '+(d.bank||[]).length+'　'+t('Проведённые вечера','Completed evenings')+' · '+Object.keys(d.history||{}).length
+}
+function backupScreen(){
+ app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('Резервная копия','Family backup')+'</h1><section class="panel"><h2>'+t('На этом устройстве','On this device')+'</h2><p>'+backupCounts(s)+'</p><p>'+t('Файл содержит семейные данные и личные вопросы. API-ключи в него не входят.','The file contains family details and personal questions. API keys are excluded.')+'</p>'+btn(t('Скачать копию','Download backup'),'downloadBackup()',true)+'</section><section class="panel"><h2>'+t('Восстановить из файла','Restore from file')+'</h2>'+field(t('Выберите копию JSON','Choose a JSON backup'),'<input type="file" accept=".json,application/json" onchange="readBackup(this.files[0])">')+'<div id="backupPreview" role="status"></div></section>'
+}
+async function readBackup(file){
+ const token=++backupRead;
+ pendingBackup=null;
+ const preview=document.getElementById('backupPreview');preview.textContent='';
+ if(!file)return;
+ try{
+  const data=validateBackup(JSON.parse(await file.text()));
+  if(token!==backupRead||!preview.isConnected)return;
+  pendingBackup=data;
+  preview.innerHTML='<p>'+backupCounts(data)+'</p><p>'+t('После подтверждения данные семьи на этом устройстве будут заменены содержимым файла.','Confirming will replace the family data on this device with the contents of this file.')+'</p>'+btn(t('Заменить и восстановить','Replace and restore'),'restoreBackup()',true)+' '+btn(t('Отмена','Cancel'),'openBackup()')
+ }catch{if(token===backupRead)preview.textContent=t('Проверьте файл: нужна поддерживаемая JSON-копия «Вечера вместе». Текущие данные сохранены.','Choose a supported Evening Together JSON backup. Your current data is intact.')}
+}
+function openBackup(){pendingBackup=null;++backupRead;go('backup')}
+function restoreBackup(){
+ if(!pendingBackup||view!=='backup')return;
+ try{localStorage.setItem(storageKey,JSON.stringify(pendingBackup))}
+ catch{document.getElementById('backupPreview').textContent=t('Не удалось записать копию. Проверьте место в браузере.','Could not store the backup. Check browser storage.');return}
+ s=pendingBackup;pendingBackup=null;current=0;go('home')
+}
+
 function render(){
  lang=['ru','en'].includes(s.lang)?s.lang:systemLanguage();document.documentElement.lang=lang;brand.textContent=document.title=t('Вечер вместе','Evening Together');
  language.setAttribute('aria-label',t('Язык','Language'));language.innerHTML='<option value="ru">Русский</option><option value="en">English</option>';language.value=lang;
  app.className=view==='play'?'tv':'';
+ if(view==='backup'){backupScreen();return}
  if(view==='survey'){surveyScreen();return}
  if(view==='bank'){bankScreen();return}
  if(view==='history'){historyScreen();return}
@@ -425,7 +497,7 @@ function render(){
  if(view==='detail'){renderEvening(c,title);return}
  let next=upcomingEvening();if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
+ const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")+' '+btn(t('Резервная копия','Family backup'),'openBackup()')
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
