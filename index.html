@@ -89,15 +89,34 @@ function recordEvening(){
  const id=guestTopic??s.plan[current],key=(guestTopic===null?eveningDate():'shared-'+iso(new Date()))+'/'+id;
  const attendees=guestTopic===null?[...s.people,...guests()]:[];
  s.history=s.history||{};
- s.history[key+'/'+Date.now()]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||t(topicAt()[1],topicAt()[2]),outline:steps(topicAt()).map(([label,body,time])=>[label,body,time])};
- save()
+ const savedKey=key+'/'+Date.now();
+ s.history[savedKey]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||t(topicAt()[1],topicAt()[2]),outline:steps(topicAt()).map(([label,body,time])=>[label,body,time])};
+ save();return savedKey
+}
+let finishedRecord=null,actionDraft='';
+function actionScreen(){
+ app.innerHTML='<section class="panel"><h1>'+t('Что попробуем на неделе?','What will we try this week?')+'</h1><p>'+t('Вечер сохранён в истории. Если хотите, запишите одно дело, к которому вернётесь на следующей встрече.','This evening is in your history. If you like, choose one thing to try before your next evening.')+'</p><form onsubmit="keepAction(event)">'+field(t('Наше решение','Our next step'),'<textarea name="action" maxlength="300" rows="3" required oninput="actionDraft=this.value" placeholder="'+t('Например: пригласим на прогулку того, кто часто один.','For example: invite someone who is often alone for a walk.')+'">'+esc(actionDraft)+'</textarea>')+'<div class="row"><button class="primary">'+t('Сохранить решение','Save our next step')+'</button><button type="button" onclick="go(\'home\')">'+t('Пропустить','Skip')+'</button></div></form></section>'
+}
+function keepAction(event){
+ event.preventDefault();
+ const field=event.target.elements.action,value=field.value.trim();
+ if(!value){field.focus();return}
+ if(view!=='action'||!s.history?.[finishedRecord])return;
+ s.history[finishedRecord].action=value.slice(0,300);save();go('home')
+}
+function previousAction(){
+ if(guestTopic!==null)return '';
+ const entries=Object.entries(s.history||{}).filter(([key])=>!key.startsWith('shared-'));
+ const last=entries[entries.length-1];
+ if(!last||!last[1].action||last[0].split('/')[0]>=eveningDate())return '';
+ return '<aside class="family-question"><strong>'+t('Как получилось?','How did it go?')+'</strong><blockquote>'+esc(last[1].action)+'</blockquote><p>'+t('В прошлый раз вы выбрали это дело. Поделитесь, что запомнилось.','Last time you chose this step. Share what stood out to you.')+'</p></aside>'
 }
 function historyScreen(){
  const records=Object.values(s.history||{}).reverse().sort((a,b)=>b.day.localeCompare(a.day));
  app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('История вечеров','Evening history')+'</h1>'+
  (records.length?records.map(r=>{
   const c=catalog[r.id],names=r.attendees.map(p=>[p.name,p.age].filter(Boolean).map(esc).join(' · ')).filter(Boolean).join(', ');
-  return '<details class="panel"><summary>'+esc(r.title||t(c[1],c[2]))+(paceLabels[r.pace]?' · '+t(...paceLabels[r.pace]):'')+' · '+r.day+' · '+r.minutes+t(' мин',' min')+'</summary><p>'+names+'</p><ol>'+r.outline.map(([label,body,time])=>'<li><strong>'+esc(label)+'</strong> · '+time+'<p>'+esc(body)+'</p></li>').join('')+'</ol></details>'
+  return '<details class="panel"><summary>'+esc(r.title||t(c[1],c[2]))+(paceLabels[r.pace]?' · '+t(...paceLabels[r.pace]):'')+' · '+r.day+' · '+r.minutes+t(' мин',' min')+'</summary><p>'+names+'</p>'+(r.action?'<p><strong>'+t('Наше решение','Our next step')+'</strong> · '+esc(r.action)+'</p>':'')+'<ol>'+r.outline.map(([label,body,time])=>'<li><strong>'+esc(label)+'</strong> · '+time+'<p>'+esc(body)+'</p></li>').join('')+'</ol></details>'
  }).join(''):'<p>'+t('Здесь появятся программы после нажатия «Завершить».','Completed outlines appear here when you select Finish.')+'</p>')
 }
 const providers={gemini:'Gemini',grok:'Grok'};
@@ -429,7 +448,7 @@ function validateBackup(doc){
  const person=v=>fields(v,['name','age','topic','format','question'])&&str(v.name)&&age(v.age)&&topics.includes(v.topic)&&(v.format===undefined||Object.keys(formats).includes(v.format))&&(v.question===undefined||str(v.question));
  const pace=v=>['','quiet','active','light'].includes(v);
  const map=(v,keyCheck,valueCheck)=>v===undefined||(obj(v)&&Object.entries(v).every(([k,x])=>keyCheck(k)&&valueCheck(x)));
- const entry=r=>fields(r,['id','day','title','minutes','attendees','outline','pace'])&&id(r.id)&&day(r.day)&&str(r.title)&&Number.isInteger(r.minutes)&&r.minutes>0&&(r.pace===undefined||pace(r.pace))&&array(r.attendees,p=>fields(p,['name','age'])&&str(p.name)&&age(p.age))&&array(r.outline,x=>Array.isArray(x)&&x.length===3&&str(x[0])&&str(x[1])&&Number.isInteger(x[2])&&x[2]>0);
+ const entry=r=>fields(r,['id','day','title','minutes','attendees','outline','pace','action'])&&(r.action===undefined||str(r.action)&&r.action.length<=300)&&id(r.id)&&day(r.day)&&str(r.title)&&Number.isInteger(r.minutes)&&r.minutes>0&&(r.pace===undefined||pace(r.pace))&&array(r.attendees,p=>fields(p,['name','age'])&&str(p.name)&&age(p.age))&&array(r.outline,x=>Array.isArray(x)&&x.length===3&&str(x[0])&&str(x[1])&&Number.isInteger(x[2])&&x[2]>0);
  if(!doc||doc.app!=='evening-together'||doc.version!==1||!fields(doc.family,backupFields))reject();
  const d=doc.family;
  if(!day(d.start)||![4,8,12].includes(d.weeks)||![30,40,60,75,90].includes(d.minutes)||!array(d.people,person)||!array(d.plan,id)||d.plan.length!==d.weeks)reject();
@@ -488,6 +507,7 @@ function render(){
  if(view==='backup'){backupScreen();return}
  if(view==='survey'){surveyScreen();return}
  if(view==='bank'){bankScreen();return}
+ if(view==='action'){actionScreen();return}
  if(view==='history'){historyScreen();return}
  if(view==='guests'){guestsScreen();return}
  if(view==='ai'){aiScreen();return}
@@ -647,11 +667,11 @@ function steps(c){
  if(planned&&adultEvening())outline[outline.length-2][1]=t('Возьмите пример из повседневной жизни. Обсудите два возможных решения и какое из них согласуется с прочитанным.','Take an everyday example. Consider two possible responses and which reflects the reading.');
  return adaptEvening(outline,c)
 }
-function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
+function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+(step===0?previousAction():'')+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
 function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
-function move(n){step+=n;if(step>=steps(topicAt()).length){recordEvening();go('home')}else render()}
+function move(n){step+=n;if(step>=steps(topicAt()).length){finishedRecord=recordEvening();actionDraft='';go(guestTopic===null?'action':'home')}else render()}
 function swap(){if(guestTopic!==null){guestTopic=(guestTopic+1)%catalog.length;render();return}let id=s.plan[current];do{id=(id+1)%catalog.length}while(s.plan.length<catalog.length&&s.plan.includes(id));const j=s.plan.indexOf(id);if(j>=0)s.plan[j]=s.plan[current];s.plan[current]=id;save();render()}
 function shareTopic(){
  const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current])+(adultEvening()?'&audience=adult':'');
