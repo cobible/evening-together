@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evening Together</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#193e35;font:17px/1.5 "DM Sans",system-ui,sans-serif}header,main{max-width:1100px;margin:auto;padding:22px clamp(16px,4vw,50px)}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d5dbd0;gap:12px}.brand{font:600 clamp(18px,3vw,28px) Georgia,serif}.brand b{color:#b46038;margin-right:8px}h1,h2{font:normal clamp(30px,5vw,62px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:clamp(26px,3vw,38px)}button,select,input,a.action{font:inherit;color:inherit;background:#fffdf7;border:1px solid #b8c4b9;border-radius:10px;padding:10px 14px;max-width:100%}button,a.action{cursor:pointer}button:hover,a.action:hover{background:#e0eadf}button.primary{background:#205547;color:white;border-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:4px solid #cb772e;outline-offset:3px}.hero{padding:clamp(24px,5vw,58px);border-radius:22px;background:#dce9da;margin:12px 0 28px}.hero h1{max-width:810px}.meta{font-size:.88em;color:#436454;font-weight:650}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.week{display:grid;grid-template-columns:minmax(75px,110px) 1fr auto;align-items:center;text-align:left;width:100%;margin:8px 0;gap:12px;background:#fffdf8;padding:16px}.date{color:#596c60;font-size:.88em}.panel{background:#fffdf8;border:1px solid #d7dcd1;padding:clamp(16px,4vw,34px);border-radius:18px;margin:15px 0}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px 10px 10px 0}fieldset{border:1px solid #c8d1c5;border-radius:12px;margin:14px 0;padding:12px}.tv{font-size:clamp(22px,3vw,44px)}.tv h1{font-size:clamp(38px,5.5vw,90px)}.tv button,.tv a{margin:5px}.tv .hero{min-height:48vh}.action{display:inline-block;text-decoration:none}button:disabled{opacity:.45;cursor:default}header select{font-size:15px}small{display:block}a{color:#205547}@media(max-width:520px){.week{grid-template-columns:70px 1fr auto}.hero{padding:22px}header{padding:14px}.brand b{margin-right:3px}}@media(min-width:1500px){header,main{max-width:80vw}body{font-size:22px}}
-.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}.bank-entry{margin:18px 0}textarea{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid #83968a}form.panel label{display:grid}article.panel h2{overflow-wrap:anywhere;font-size:clamp(22px,3vw,32px)}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}.bank-entry{margin:18px 0}textarea{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid #83968a}form.panel label{display:grid}article.panel h2{overflow-wrap:anywhere;font-size:clamp(22px,3vw,32px)}.pace{background:#fffdf7;margin:20px 0;padding:18px}.pace legend{font-weight:650}.pace [aria-pressed=true]{background:#205547;color:white}.pace-actions:not(:empty){margin-top:12px}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
 const catalog=[
 ['nature','Забота в маленьких деталях','Care in the little things','Матфея 6:26','Matthew 6:26','Какую птицу ты заметил сегодня?','Which bird caught your eye today?','Нарисуйте птицу по памяти. Обсудите, почему Иисус обратил внимание на птиц.','Sketch a bird from memory. Discuss why Jesus drew attention to birds.'],
 ['friends','Первый шаг к миру','The first step toward peace','Колоссянам 3:13','Colossians 3:13','Какие слова помогают тебе помириться?','What words help you make peace?','Разыграйте ссору двух вымышленных соседей и придумайте два добрых окончания.','Act out a disagreement between two imaginary neighbours and try two kind endings.'],
@@ -61,7 +61,7 @@ function recordEvening(){
  const id=guestTopic??s.plan[current],key=(guestTopic===null?eveningDate():'shared-'+iso(new Date()))+'/'+id;
  const attendees=guestTopic===null?[...s.people,...guests()]:[];
  s.history=s.history||{};
- s.history[key+'/'+Date.now()]={id,day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||'',outline:steps(catalog[id]).map(([label,body,time])=>[label,body,time])};
+ s.history[key+'/'+Date.now()]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||'',outline:steps(catalog[id]).map(([label,body,time])=>[label,body,time])};
  save()
 }
 function historyScreen(){
@@ -69,7 +69,7 @@ function historyScreen(){
  app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('История вечеров','Evening history')+'</h1>'+
  (records.length?records.map(r=>{
   const c=catalog[r.id],names=r.attendees.map(p=>[p.name,p.age].filter(Boolean).map(esc).join(' · ')).filter(Boolean).join(', ');
-  return '<details class="panel"><summary>'+esc(r.title||t(c[1],c[2]))+' · '+r.day+' · '+r.minutes+t(' мин',' min')+'</summary><p>'+names+'</p><ol>'+r.outline.map(([label,body,time])=>'<li><strong>'+esc(label)+'</strong> · '+time+'<p>'+esc(body)+'</p></li>').join('')+'</ol></details>'
+  return '<details class="panel"><summary>'+esc(r.title||t(c[1],c[2]))+(paceLabels[r.pace]?' · '+t(...paceLabels[r.pace]):'')+' · '+r.day+' · '+r.minutes+t(' мин',' min')+'</summary><p>'+names+'</p><ol>'+r.outline.map(([label,body,time])=>'<li><strong>'+esc(label)+'</strong> · '+time+'<p>'+esc(body)+'</p></li>').join('')+'</ol></details>'
  }).join(''):'<p>'+t('Здесь появятся программы после нажатия «Завершить».','Completed outlines appear here when you select Finish.')+'</p>')
 }
 const providers={gemini:'Gemini',grok:'Grok'};
@@ -409,11 +409,63 @@ function chapterLink(c){
  const url='https://wol.jw.org/'+t('ru/wol/b/r2/lp-u','en/wol/b/r1/lp-e')+'/nwt/'+path;
  return '<a href="'+url+'" target="_blank" rel="noopener">'+t(c[3],c[4])+' ↗</a>'
 }
+const paceLabels={
+ quiet:['Спокойно поговорить','Quiet conversation'],
+ active:['Хочется движения','Something active'],
+ light:['Сегодня мало сил','Low-energy evening']
+};
+let guestPace='';
+function eveningPace(){return guestTopic===null?s.paces?.[eveningDate()]||'':guestPace}
+function changePace(value){
+ if(value && !Object.prototype.hasOwnProperty.call(paceLabels,value))return;
+ if(guestTopic!==null)guestPace=value;
+ else{
+  s.paces=s.paces||{};
+  if(value)s.paces[eveningDate()]=value;else delete s.paces[eveningDate()];
+  save()
+ }
+ render();
+ document.querySelector('.pace [aria-pressed="true"]')?.focus()
+}
+function pacePicker(){
+ const pace=eveningPace();
+ const buttons=Object.entries(paceLabels).map(([id,labels])=>
+  '<button type="button" aria-pressed="'+(pace===id)+'" onclick="changePace(\''+id+'\')">'+t(...labels)+(id==='light'?t(' · 15 мин',' · 15 min'):'')+'</button>');
+ const reset=pace?btn(t('Вернуть исходную программу','Restore original plan'),"changePace('')"):'';
+ const shorten=s.minutes>30&&pace!=='light'?btn(shortEvening()?t('Вернуть ','Restore ')+s.minutes+t(' мин',' min'):t('Сократить до 30 минут','Shorten to 30 minutes'),'toggleShort()'):'';
+ return '<fieldset class="pace"><legend>'+t('Как проведём вечер сегодня?','How shall we spend this evening?')+'</legend><div class="row">'+buttons.join('')+'</div><div class="row pace-actions">'+reset+shorten+'</div></fieldset>'
+}
+const paceActivities={
+ nature:[['Вспомните по одной детали в природе, которая иллюстрирует прочитанное. Что она помогает понять об Иегове?','Recall a detail in nature that illustrates the reading. What does it help you understand about Jehovah?'],['Пройдитесь по комнате или двору. Найдите деталь, которая напоминает о прочитанном. По очереди покажите свои находки.','Walk around the room or yard. Find a detail that reminds you of the passage and take turns showing it.']],
+ friends:[['Вспомните случай, когда чьи-то слова вам помогли. Какие слова из этой истории вы хотели бы сказать другу?','Recall a time someone’s words helped you. What words from that story would you like to say to a friend?'],['Разыграйте короткую сцену между двумя друзьями. Поменяйтесь ролями и попробуйте другой ответ, учитывая прочитанное.','Act out a short scene between friends. Switch roles and try another response that reflects the reading.']],
+ history:[['Выберите героя из отрывка. Какое его решение вам было бы труднее всего принять? Выслушайте друг друга.','Choose someone from the passage. Which decision would have been hardest for you to make? Listen to each other.'],['Разложите три листка: начало, решение, результат. Переходите от одного к другому и рассказывайте, что произошло.','Set out three sheets for the beginning, decision and outcome. Move between them as you retell the account.']],
+ music:[['Каждый может вспомнить одну песню, которая связана с прочитанным. Почему она вам дорога?','Think of a song connected to the passage. Why is it meaningful to you?'],['По очереди задавайте ритм хлопками, а остальные повторяйте. Затем вместе спойте знакомую песню по теме вечера.','Take turns clapping a rhythm for everyone to repeat. Then sing a familiar song about the evening’s theme.']]
+};
+function adaptEvening(outline,c){
+ const pace=eveningPace();if(!pace)return outline;
+ const question=questionOwner()?.question||savedIdea()?.question||t(c[5],c[6]);
+ if(pace==='light'){
+  return [
+   [outline[0][0],t('Начните с молитвы.','Begin with prayer.'),2],
+   [outline[1][0],bankQuestion()?outline[1][1]:t('Выберите один стих из отрывка: ','Choose one verse from ')+t(c[3],c[4])+'.',4],
+   [outline[2][0],question,6],
+   [outline[outline.length-1][0],t('По одной фразе: что хочется взять с собой на завтра? Завершите молитвой.','In one sentence, what would you like to take into tomorrow? Conclude with prayer.'),3]
+  ]
+ }
+ const activity=outline[outline.length-2];
+ const personal=bankQuestion()||savedIdea()||questionOwner();
+ activity[0]=t(...paceLabels[pace]);
+ if(personal){
+  activity[1]=question+' '+(pace==='quiet'?t('Вспомните пример из своей жизни. Что бы вы сказали близкому человеку в такой ситуации?','Recall a personal example. What would you tell someone close to you in that situation?'):t('Покажите ситуацию по этому вопросу: один выбирает, как поступить, другой предлагает помощь. Поменяйтесь ролями.','Act out a situation related to this question: one person makes a choice, another offers help. Switch roles.'))
+ }else activity[1]=t(...paceActivities[c[0]][pace==='active'?1:0]);
+ return outline
+}
+
 let guestShort=false;
 function shortEvening(){
  return guestTopic!==null?guestShort:!!s.shortDates?.[iso(date(current))]
 }
-function duration(){return shortEvening()?30:s.minutes}
+function duration(){return eveningPace()==='light'?15:shortEvening()?30:s.minutes}
 function toggleShort(){
  if(guestTopic!==null)guestShort=!guestShort;
  else{
@@ -440,14 +492,14 @@ function renderEvening(c,title){
  const bank=bankQuestion();if(bank)title=esc(bank.question);
  const dateLabel=guestTopic===null?fmt(current):t('Общая тема','Shared topic');
  const controls=[btn(t('Начать вечер →','Start evening →'),'start()',true)];
- if(s.minutes>30)controls.push(btn(shortEvening()?t('Вернуть ','Restore ')+s.minutes+t(' мин',' min'):t('Сократить до 30 минут','Shorten to 30 minutes'),'toggleShort()'));
+
  const outline=steps(c).map(([label,description,minutes],index)=>{
   const link=index===1&&!bank?'<p>'+chapterLink(c)+'</p>':'';
   return '<li><div><strong>'+label+'</strong><p>'+esc(description)+'</p>'+link+'</div><small>'+minutes+t(' мин',' min')+'</small></li>'
  }).join('');
  app.innerHTML=btn(t('← План','← Planner'),"go('home')")+
   '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+(bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
-  questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
+  pacePicker()+questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
   (bank?'':'<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section>')+'</aside></div>'+
   '<div class="row">'+(bank?btn(t('В копилку','Open question box'),"go('bank')"):btn(t('Заменить тему','Change topic'),'swap()'))+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
 }
@@ -456,7 +508,7 @@ function steps(c){
  const snack=s.snack?10:0,active=duration()-snack,read=Math.round(active*.30),discuss=Math.round(active*.25);
  const idea=savedIdea();
  const base=[[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[questionOwner()?t('Вопрос семьи','Family question'):t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]];
- const planned=bankQuestion();return planned?bankSteps(planned.question,base):base
+ const planned=bankQuestion();return adaptEvening(planned?bankSteps(planned.question,base):base,c)
 }
 function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
@@ -466,7 +518,7 @@ function move(n){step+=n;if(step>=steps(catalog[guestTopic??s.plan[current]]).le
 function swap(){if(guestTopic!==null){guestTopic=(guestTopic+1)%catalog.length;render();return}let id=s.plan[current];do{id=(id+1)%catalog.length}while(s.plan.length<catalog.length&&s.plan.includes(id));const j=s.plan.indexOf(id);if(j>=0)s.plan[j]=s.plan[current];s.plan[current]=id;save();render()}
 function shareTopic(){
  const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current]);
- const copyOutline=location.protocol==='file:'||!!savedIdea()||!!bankQuestion();
+ const copyOutline=!!eveningPace()||location.protocol==='file:'||!!savedIdea()||!!bankQuestion();
  const msg=copyOutline?t('Для отправки скопируйте программу','Copy the outline to share'):t('Ссылка на тему','Topic link');
  const value=copyOutline?[bankQuestion()?.question||savedIdea()?.title||document.title,...steps(catalog[guestTopic??s.plan[current]]).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
  sharebox.innerHTML=field(msg,'<input readonly value="'+esc(value)+'">');const input=sharebox.querySelector('input');input.focus();input.select()
