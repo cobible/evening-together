@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evening Together</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f5ef;color:#193e35;font:17px/1.5 "DM Sans",system-ui,sans-serif}header,main{max-width:1100px;margin:auto;padding:22px clamp(16px,4vw,50px)}header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d5dbd0;gap:12px}.brand{font:600 clamp(18px,3vw,28px) Georgia,serif}.brand b{color:#b46038;margin-right:8px}h1,h2{font:normal clamp(30px,5vw,62px)/1.08 Georgia,serif;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:clamp(26px,3vw,38px)}button,select,input,a.action{font:inherit;color:inherit;background:#fffdf7;border:1px solid #b8c4b9;border-radius:10px;padding:10px 14px;max-width:100%}button,a.action{cursor:pointer}button:hover,a.action:hover{background:#e0eadf}button.primary{background:#205547;color:white;border-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:4px solid #cb772e;outline-offset:3px}.hero{padding:clamp(24px,5vw,58px);border-radius:22px;background:#dce9da;margin:12px 0 28px}.hero h1{max-width:810px}.meta{font-size:.88em;color:#436454;font-weight:650}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.week{display:grid;grid-template-columns:minmax(75px,110px) 1fr auto;align-items:center;text-align:left;width:100%;margin:8px 0;gap:12px;background:#fffdf8;padding:16px}.date{color:#596c60;font-size:.88em}.panel{background:#fffdf8;border:1px solid #d7dcd1;padding:clamp(16px,4vw,34px);border-radius:18px;margin:15px 0}label{display:inline-flex;flex-direction:column;gap:4px;margin:5px 10px 10px 0}fieldset{border:1px solid #c8d1c5;border-radius:12px;margin:14px 0;padding:12px}.tv{font-size:clamp(22px,3vw,44px)}.tv h1{font-size:clamp(38px,5.5vw,90px)}.tv button,.tv a{margin:5px}.tv .hero{min-height:48vh}.action{display:inline-block;text-decoration:none}button:disabled{opacity:.45;cursor:default}header select{font-size:15px}small{display:block}a{color:#205547}@media(max-width:520px){.week{grid-template-columns:70px 1fr auto}.hero{padding:22px}header{padding:14px}.brand b{margin-right:3px}}@media(min-width:1500px){header,main{max-width:80vw}body{font-size:22px}}
-.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}.bank-entry{margin:18px 0}textarea{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid #83968a}form.panel label{display:grid}article.panel h2{overflow-wrap:anywhere;font-size:clamp(22px,3vw,32px)}.pace{background:#fffdf7;margin:20px 0;padding:18px}.pace legend{font-weight:650}.pace [aria-pressed=true]{background:#205547;color:white}.pace-actions:not(:empty){margin-top:12px}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#e0ebda 35%,#cddfcf)}.hero:after{content:"";position:absolute;z-index:-1;width:180px;height:180px;border-radius:50%;right:-55px;bottom:-105px;background:#dcaa72;box-shadow:0 0 0 18px #ffffff33,0 0 0 36px #ffffff26,0 0 0 54px #ffffff19}.week:hover strong{text-decoration:underline}.week>span:last-child{font-size:1.35em}.panel a{overflow-wrap:anywhere}.outline,.roles{padding:0;list-style:none}.outline li,.roles li{padding:16px 0;border-top:1px solid #dde1d6}.outline li{display:flex;gap:12px;justify-content:space-between}.outline small{white-space:nowrap;color:#476555}.outline p{margin:.4em 0}.roles span{display:block}.evening-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}.evening-grid h2{font-size:clamp(24px,3vw,32px)}@media(max-width:760px){.evening-grid{display:block}}main{padding-bottom:64px}pre{white-space:pre-wrap;overflow-wrap:anywhere}details>summary{cursor:pointer}#aiChoices .panel{overflow-wrap:anywhere}.survey{max-width:720px;margin:auto}.survey .panel h2{font-size:clamp(24px,4vw,34px)}.survey .panel>button{margin-top:10px}.survey form input{flex:1;min-width:0}.bubble,.reply{border-radius:18px;padding:10px 16px;width:fit-content;max-width:90%;overflow-wrap:anywhere}.bubble{background:#eeece1}.reply{background:#dfebde;margin-left:auto}.survey details{margin:16px 0}.survey .panel{border-top-left-radius:4px}.family-question{background:#faf0d9;border-left:5px solid #aa7134;border-radius:14px;padding:clamp(16px,3vw,32px);margin:16px 0 24px;overflow-wrap:anywhere}.family-question blockquote{font:normal clamp(24px,3.2vw,40px)/1.2 Georgia,serif;margin:10px 0}.week small{font-weight:400;overflow-wrap:anywhere}.bank-entry{margin:18px 0}textarea{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid #83968a}form.panel label{display:grid}article.panel h2{overflow-wrap:anywhere;font-size:clamp(22px,3vw,32px)}.pace{background:#fffdf7;margin:20px 0;padding:18px}.pace legend{font-weight:650}.pace [aria-pressed=true]{background:#205547;color:white}.pace-actions:not(:empty){margin-top:12px}.tv-code{font-size:clamp(32px,6vw,72px);letter-spacing:.15em;font-variant-numeric:tabular-nums}</style><header><span class="brand"><b aria-hidden="true">◒</b><span id="brand"></span></span><select id="language"></select></header><main id="app"></main><script>
 const catalog=[
 ['nature','Забота в маленьких деталях','Care in the little things','Матфея 6:26','Matthew 6:26','Какую птицу ты заметил сегодня?','Which bird caught your eye today?','Нарисуйте птицу по памяти. Обсудите, почему Иисус обратил внимание на птиц.','Sketch a bird from memory. Discuss why Jesus drew attention to birds.'],
 ['friends','Первый шаг к миру','The first step toward peace','Колоссянам 3:13','Colossians 3:13','Какие слова помогают тебе помириться?','What words help you make peace?','Разыграйте ссору двух вымышленных соседей и придумайте два добрых окончания.','Act out a disagreement between two imaginary neighbours and try two kind endings.'],
@@ -503,7 +503,10 @@ function restoreBackup(){
 function render(){
  lang=['ru','en'].includes(s.lang)?s.lang:systemLanguage();document.documentElement.lang=lang;brand.textContent=document.title=t('Вечер вместе','Evening Together');
  language.setAttribute('aria-label',t('Язык','Language'));language.innerHTML='<option value="ru">Русский</option><option value="en">English</option>';language.value=lang;
- app.className=view==='play'?'tv':'';
+ app.className=(view==='play'||view==='tv')?'tv':'';
+ if(view==='tv'){tvScreen();return}
+ if(view==='transfer'){transferScreen();return}
+ if(view==='tvEntry'){tvEntry();return}
  if(view==='backup'){backupScreen();return}
  if(view==='survey'){surveyScreen();return}
  if(view==='bank'){bankScreen();return}
@@ -517,7 +520,7 @@ function render(){
  if(view==='detail'){renderEvening(c,title);return}
  let next=upcomingEvening();if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")+' '+btn(t('Резервная копия','Family backup'),'openBackup()')
+ const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")+' '+btn(t('Резервная копия','Family backup'),'openBackup()')+' '+btn(t('Ввести код вечера','Enter evening code'),"go('tvEntry')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -655,7 +658,7 @@ function renderEvening(c,title){
   '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+(adultEvening()?t(' · Для взрослых',' · Adults'):'')+'</div><h1>'+title+'</h1><p>'+(bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
   pacePicker()+questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
   (bank?'':'<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section>')+'</aside></div>'+
-  '<div class="row">'+(bank?btn(t('В копилку','Open question box'),"go('bank')"):btn(t('Заменить тему','Change topic'),'swap()'))+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
+  '<div class="row">'+(bank?btn(t('В копилку','Open question box'),"go('bank')"):btn(t('Заменить тему','Change topic'),'swap()'))+btn(t('Открыть на телевизоре','Open on TV'),'openTransfer()')+' '+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
 }
 
 function steps(c){
@@ -673,6 +676,94 @@ function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
 function move(n){step+=n;if(step>=steps(topicAt()).length){finishedRecord=recordEvening();actionDraft='';go(guestTopic===null?'action':'home')}else render()}
 function swap(){if(guestTopic!==null){guestTopic=(guestTopic+1)%catalog.length;render();return}let id=s.plan[current];do{id=(id+1)%catalog.length}while(s.plan.length<catalog.length&&s.plan.includes(id));const j=s.plan.indexOf(id);if(j>=0)s.plan[j]=s.plan[current];s.plan[current]=id;save();render()}
+const tvLengths=[15,30,40,60,75,90],tvPaces=['','quiet','active','light'];
+let tvRecipe=null,tvPosition=-1,tvPersonal=false;
+function makeTvRecipe(includeQuestion){
+ const idea=savedIdea(),bank=bankQuestion();
+ const r={id:guestTopic??s.plan[current],lang,adult:adultEvening(),pace:eveningPace(),minutes:duration(),snack:!!s.snack};
+ if(includeQuestion && questionOwner())r.question=questionOwner().question;
+ if(includeQuestion && bank)r.bank=true;
+ if(idea && !bank)r.idea=[idea.title,idea.question,idea.discuss,idea.activity];
+ return r
+}
+function tvCode(r){return String(r.id).padStart(2,'0')+(r.lang==='en'?1:0)+Number(r.adult)+tvPaces.indexOf(r.pace)+tvLengths.indexOf(r.minutes)+Number(r.snack)}
+function parseTvCode(code){
+ if(!/^\d{2}[01][01][0-3][0-5][01]$/.test(code)||+code.slice(0,2)>=catalog.length)throw Error();
+ const r={id:+code.slice(0,2),lang:code[2]==='1'?'en':'ru',adult:code[3]==='1',pace:tvPaces[+code[4]],minutes:tvLengths[+code[5]],snack:code[6]==='1'};
+ if((r.minutes===15)!==(r.pace==='light'))throw Error();
+ return r
+}
+function tvFragment(r){
+ const code=tvCode(r);
+ if(!r.idea&&!r.question)return 'tv1='+code;
+ const bytes=new TextEncoder().encode(JSON.stringify([r.question||'',!!r.bank,r.idea||null]));
+ const body=btoa(Array.from(bytes,b=>String.fromCharCode(b)).join('')).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+ return 'tv1='+code+'.'+body
+}
+function parseTvFragment(fragment){
+ const parts=fragment.slice(4).split('.');
+ if(parts.length>2||fragment.length>80000)throw Error();
+ const r=parseTvCode(parts[0]);if(parts.length===1)return r;
+ if(!/^[A-Za-z0-9_-]+$/.test(parts[1]))throw Error();
+ const bytes=Uint8Array.from(atob(parts[1].replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+ const values=JSON.parse(new TextDecoder().decode(bytes));
+ if(!Array.isArray(values)||values.length!==3)throw Error();
+ const [question,bank,idea]=values;
+ if(typeof question!=='string'||question.length>400||typeof bank!=='boolean'||(bank&&!question))throw Error();
+ if(idea!==null&&(!Array.isArray(idea)||idea.length!==4||idea.some(x=>typeof x!=='string'||x.length>3000)))throw Error();
+ return {...r,question,bank,idea}
+}
+// Compile the transferable plan with only the explicitly selected fields.
+function tvOutline(r){
+ const original={s,current,guestTopic,lang};
+ try{
+  current=0;guestTopic=null;lang=r.lang;
+  const day='2000-01-01';
+  s={start:day,plan:[r.id],people:[{age:r.adult?30:undefined,question:r.question||''}],minutes:r.minutes,snack:r.snack,paces:{[day]:r.pace}};
+  if(r.bank)s.bank=[{date:day,question:r.question}];
+  if(r.idea){const [title,question,discuss,activity]=r.idea;s.ideas={[day]:{topic:r.id,language:r.lang,title,question,discuss,activity}}}
+  const c=topicAt();
+  return {title:r.bank?r.question:savedIdea()?.title||t(c[1],c[2]),steps:steps(c),reading:r.bank?resourceLinks(r.question):chapterLink(c),questionLinks:r.question?resourceLinks(r.question):'',
+   further:r.bank?'':article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])}
+ }finally{s=original.s;current=original.current;guestTopic=original.guestTopic;lang=original.lang}
+}
+function tvList(rows){
+ return '<ol class="outline">'+rows.map(([label,body,min])=>'<li><div><strong>'+esc(label)+'</strong><p>'+esc(body)+'</p></div><small>'+min+t(' мин',' min')+'</small></li>').join('')+'</ol>'
+}
+function openTransfer(){tvPersonal=false;go('transfer')}
+function transferScreen(){
+ const r=makeTvRecipe(tvPersonal),plan=tvOutline(r),fragment=tvFragment(r);
+ const url=new URL('https://cobible.github.io/evening-together/');url.hash=fragment;
+ const compact=!r.idea&&!r.question;
+ app.innerHTML=btn(t('← Вечер','← Evening'),"go('detail')")+'<h1>'+t('Открыть на телевизоре','Open on TV')+'</h1>'+
+ (questionOwner()?'<label><span><input type="checkbox" onchange="tvPersonal=this.checked;render()" '+(tvPersonal?'checked':'')+'> '+t('Включить личный вопрос','Include personal question')+'</span></label>':'')+
+ '<section class="panel"><h2>'+esc(plan.title)+'</h2><details><summary>'+t('Что получит телевизор','Preview shared evening')+' · '+r.minutes+t(' мин',' min')+'</summary>'+tvList(plan.steps)+'</details></section>'+
+ (compact?'<section class="panel"><h2>'+t('Код для пульта','Remote entry code')+'</h2><strong class="tv-code">'+tvCode(r)+'</strong><p>'+t('Откройте этот сайт на телевизоре, выберите «Ввести код вечера» и наберите семь цифр.','Open this site on your TV, select “Enter evening code” and enter the seven digits.')+'</p></section>':'')+
+ '<section class="panel">'+field(t('Ссылка на готовый вечер','Prepared evening link'),'<input id="tvUrl" readonly value="'+esc(url.href)+'" onclick="this.select()">')+btn(t('Скопировать ссылку','Copy link'),'copyTvUrl()')+'<p id="copyResult" role="status">'+(compact?'':t('Для индивидуальной программы передайте полную ссылку на другое устройство или откройте её из синхронизированной закладки браузера.','For a personalised evening, send the full link to the other device or open it from a synced browser bookmark.'))+'</p></section>'
+}
+async function copyTvUrl(){
+ const field=document.getElementById('tvUrl'),status=document.getElementById('copyResult');
+ try{await navigator.clipboard.writeText(field.value);status.textContent=t('Ссылка скопирована.','Link copied.')}
+ catch{field.focus();field.select();status.textContent=t('Ссылка выделена для копирования.','Link selected for copying.')}
+}
+function tvEntry(){
+ app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<h1>'+t('Ввести код вечера','Enter evening code')+'</h1><form class="panel" onsubmit="enterTvCode(event)">'+field(t('Семь цифр с телефона','Seven digits from your phone'),'<input name="code" inputmode="numeric" required maxlength="7" pattern="[0-9]{7}">')+'<button class="primary">'+t('Открыть','Open')+'</button><p id="tvError" role="status"></p></form>'
+}
+function enterTvCode(event){
+ event.preventDefault();
+ try{const r=parseTvCode(event.target.elements.code.value.trim());tvRecipe=r;tvPosition=-1;history.replaceState(null,'','#'+tvFragment(r));go('tv')}
+ catch{document.getElementById('tvError').textContent=t('Проверьте семь цифр кода.','Please check the seven digits.')}
+}
+function tvMove(n){tvPosition+=n;render();scrollTo(0,0)}
+function tvScreen(){
+ const plan=tvOutline(tvRecipe),rows=plan.steps;
+ if(tvPosition===rows.length){tvPosition=-1;go('home');return}
+ const intro=tvPosition<0,row=rows[tvPosition];
+ const links=intro?plan.reading+(plan.further?' · <a target="_blank" rel="noopener" href="'+esc(plan.further)+'">'+t('Статья для подготовки','Preparation article')+'</a>':''):tvPosition===1?plan.reading:tvPosition===2?plan.questionLinks:'';
+ app.innerHTML=btn(t('← Календарь','← Calendar'),"go('home')")+'<section class="hero"><div class="meta">'+(intro?tvRecipe.minutes:row[2])+t(' мин',' min')+(intro?'':' · '+(tvPosition+1)+' / '+rows.length)+'</div><h1>'+esc(intro?plan.title:row[0])+'</h1>'+(intro?'':'<p>'+esc(row[1])+'</p>')+links+'</section><div class="row">'+(intro?'':btn(t('Назад','Back'),'tvMove(-1)'))+btn(intro?t('Начать вечер','Start evening'):tvPosition===rows.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'tvMove(1)',true)+'</div>'+(intro?tvList(rows):'');
+ app.querySelector('.primary').focus()
+}
+
 function shareTopic(){
  const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current])+(adultEvening()?'&audience=adult':'');
  const copyOutline=!!eveningPace()||location.protocol==='file:'||!!savedIdea()||!!bankQuestion();
@@ -694,11 +785,12 @@ language.onchange=()=>{
  if(pending)[first.value,weeks.value,mins.value,snack.value]=pending
 };
 window.addEventListener('languagechange',()=>{if(!['ru','en'].includes(s.lang))render()});
-document.addEventListener('keydown',e=>{if(view!=='play'||!e.key.startsWith('Arrow'))return;e.preventDefault();const nodes=Array.from(document.querySelectorAll('button,select,a[href]'));const dir=['ArrowDown','ArrowRight'].includes(e.key)?1:-1;nodes[(nodes.indexOf(document.activeElement)+dir+nodes.length)%nodes.length].focus()});
+document.addEventListener('keydown',e=>{if(!['play','tv'].includes(view)||!e.key.startsWith('Arrow'))return;e.preventDefault();const nodes=Array.from(document.querySelectorAll('button,select,a[href]'));const dir=['ArrowDown','ArrowRight'].includes(e.key)?1:-1;nodes[(nodes.indexOf(document.activeElement)+dir+nodes.length)%nodes.length].focus()});
 const shared=location.hash.match(/^#evening=(\d+)(&audience=adult)?$/);
 if(shared && +shared[1]<catalog.length){
  guestTopic=+shared[1];sharedAdults=!!shared[2];current=0;
  view='detail'
 }
+if(location.hash.startsWith('#tv1=')){try{tvRecipe=parseTvFragment(location.hash.slice(1));tvPosition=-1;view='tv'}catch{view='tvEntry'}}
 render()
 </script></html>
