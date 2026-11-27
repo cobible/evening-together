@@ -16,6 +16,34 @@ const catalog=[
 ['history','Как строил Ной','How Noah built','Бытие 6:14–22','Genesis 6:14–22','Что помогает закончить большое дело?','What helps you finish a big task?','Сделайте модель ковчега из бумаги. Поделитесь, каких усилий могло требовать строительство.','Make a paper model of the ark. Discuss what building it might have required.'],
 ['music','Хвалим Иегову вместе','Praising Jehovah together','Псалом 150','Psalm 150','Какие инструменты ты узнаёшь на слух?','Which instruments can you recognise by ear?','Найдите в псалме инструменты. Каждый отбивает свой ритм, затем попробуйте сыграть вместе.','Find instruments in the psalm. Tap a rhythm each and then try playing together.']
 ];
+const adultPrograms=[
+["Когда ответственность не даёт отдохнуть", "When responsibility follows you home", "Как отличить полезную подготовку от тревожного прокручивания одного и того же?", "When does useful preparation turn into going over the same worry again?", "Возьмите одну заботу этой недели. Назовите действие, которое в ваших силах, и то, о чём хочется помолиться.", "Choose one concern from this week. Identify one action within your reach and something you want to pray about.", "Пройдитесь вместе несколько минут. На пути туда расскажите о своей заботе, на обратном пути выслушайте собеседника. С какой одной мыслью хочется вернуться домой?", "Take a short walk. On the way out, describe a concern. On the way back, listen to your companion. What thought would you like to take home?"],
+["Первый разговор после обиды", "The first conversation after hurt", "Какие слова помогают снова начать разговор после резкого ответа?", "What helps you reopen a conversation after a sharp reply?", "Возьмите вымышленный случай: человек пообещал помочь и забыл. Попробуйте начать разговор так, чтобы назвать обиду и дать собеседнику возможность объясниться.", "Imagine someone promised to help and forgot. Try an opening that acknowledges the hurt and leaves room for an explanation.", "Сядьте на разные стороны стола и произнесите одну фразу от лица каждого. Поменяйтесь местами. Какая реплика помогла услышать другого?", "Sit on opposite sides of a table and try a line from each person’s perspective. Swap seats. Which words helped you hear the other person?"],
+["Когда хороший план приходится менять", "When a good plan needs to change", "Как понять, за что стоит держаться, когда обстоятельства изменились?", "When circumstances change, what is worth holding on to?", "Сравните решения спутников Павла с одной недавней переменой в вашей жизни. Какие факты помогли бы выбрать следующий шаг?", "Compare the decisions of Paul’s companions with a recent change in your lives. What facts would help you choose your next step?", "Обозначьте два места: «сохраняем план» и «меняем план». Представьте, что поменялся рабочий график. Выберите позицию, объясните её и перейдите на другую сторону: какой аргумент вы там видите?", "Mark two spots for keeping and changing a plan. Imagine your working hours have shifted. Choose a spot, explain your choice, then switch sides. What argument can you see from there?"],
+["Песня, которая поддержала в трудное время", "A song that helped you through", "Какую песню вы вспоминаете, когда трудно подобрать слова для молитвы?", "Which song comes to mind when words for a prayer are hard to find?", "Вспомните обстоятельства, в которых эта песня стала для вас особенной. Если хочется, спойте куплет вместе.", "Recall the circumstances that made that song meaningful to you. Sing a verse together if you wish.", "Во время короткой прогулки по очереди напойте знакомую мелодию и расскажите, с каким событием она связана. Какую песню вы предложили бы другу?", "On a short walk, take turns humming a familiar tune and recalling an event connected to it. Which song might encourage a friend?"],
+["Довольствоваться тем, что есть", "Finding contentment in what we have", "Когда сравнение с другими мешает увидеть, что у нас уже есть?", "When does comparing ourselves with others obscure what we already have?", "Вспомните недавнюю покупку, о которой задумались. Что побудило к ней и как прочитанный отрывок влияет на ваш взгляд?", "Think of something you considered buying recently. What prompted the idea, and how does the passage affect your view?", "Каждый выбирает дома вещь, которая давно и хорошо служит. Покажите её и расскажите, почему её цените.", "Each person finds something in the home that has served them well. Bring it back and explain why you value it."],
+["Помочь, не ставя в неловкое положение", "Offering help with dignity", "Как предложить помощь так, чтобы человеку было легко согласиться или отказаться?", "How can we offer help in a way that makes it easy to accept or decline?", "Подумайте о человеке, которому предстоит трудная неделя. Сформулируйте конкретное предложение помощи, оставляющее ему выбор.", "Think of someone facing a hard week. Put a specific offer of help into words that leave them a choice.", "Разыграйте короткую встречу у двери: предложите привезти продукты или подвезти человека. Смените роли и попробуйте ответить на вежливый отказ.", "Act out a doorstep conversation offering groceries or a lift. Switch roles and practise responding to a polite refusal."],
+["Мужество начать трудный разговор", "Finding courage for a difficult conversation", "Как Есфирь искала поддержки и что из этого применимо к вашему решению?", "How did Esther seek support, and what might apply to a decision you face?", "Выберите вымышленную ситуацию на работе или дома. К кому обратиться за советом? С какой фразы можно начать сам разговор?", "Choose an imaginary situation at work or home. Who could offer advice? What might your opening sentence be?", "Встаньте по разные стороны комнаты. Один начинает трудный разговор, другой отвечает. Поменяйтесь местами и попробуйте более бережное начало.", "Stand on opposite sides of the room. Practise opening a difficult conversation and responding. Switch sides and try a gentler opening."],
+["Благодарность за незаметный труд", "Gratitude for work that goes unseen", "Какую заботу другого человека легко принять как должное?", "Whose quiet efforts are easy to take for granted?", "Назовите один конкретный поступок и скажите, как он на вас повлиял. Подберите слова благодарности, которые можно сказать сегодня.", "Name a specific act of kindness and describe how it affected you. Find words of thanks you could use today.", "Пройдитесь по дому, выберите место, где виден чей-то труд, и расскажите об этом. При желании составьте короткую записку благодарности.", "Walk around your home and find a place where someone’s work is visible. Explain what you noticed and, if you wish, draft a thank-you note."],
+["Что можно сделать заранее?", "What could we do in advance?", "Какое небольшое дело сейчас избавит нас от спешки позже?", "What small action now could spare us a rush later?", "Вместе посмотрите на ближайшую неделю. Выберите одно дело, которое стоит начать заранее, и договоритесь о первом посильном шаге.", "Look over the coming week. Choose something worth starting early and agree on one manageable first step.", "Пройдите по обычному утреннему маршруту дома. Найдите одно место, где чаще всего возникает задержка. Что можно подготовить с вечера?", "Walk through your usual morning routine at home. Find one point that often slows you down. What could you prepare the night before?"],
+["Выслушать прежде, чем советовать", "Listening before offering advice", "Когда вам особенно важно быть услышанным без немедленных советов?", "When do you most want someone to listen before offering advice?", "Один коротко описывает повседневную трудность. Второй сначала пересказывает услышанное и уточняет: «Я правильно тебя понял?» Затем поменяйтесь.", "Briefly describe an everyday difficulty. Your partner reflects what they heard and asks whether they understood. Swap roles.", "Пройдитесь рядом. До следующего ориентира один говорит, другой слушает; у ориентира слушатель называет услышанную мысль. На обратном пути поменяйтесь.", "Walk side by side. Until the next landmark one person speaks and one listens. At the landmark reflect one thing you heard. Swap on the way back."],
+["Не потерять цель в долгом деле", "Staying with a long-term commitment", "Что поддерживает вас, когда результат усилий пока не виден?", "What sustains you when the results of your efforts are still out of sight?", "Вспомните длительное дело, потребовавшее терпения. Сопоставьте его с рассказом о Ное и выберите достижимую цель на эту неделю.", "Recall a long undertaking that required patience. Compare it with Noah’s account and choose a manageable goal for this week.", "Отметьте в комнате старт, нынешний этап и цель одного долгого дела. Пройдите этот путь, вспоминая, кто и что помогло дойти до сегодняшнего дня.", "Mark the beginning, present stage and goal of a long undertaking in the room. Walk the route, recalling who and what helped you get this far."],
+["Музыка, которая объединяет поколения", "Music that connects generations", "Почему одна и та же песня может быть дорога двум людям по разным причинам?", "Why might the same song matter to two people for different reasons?", "По очереди выберите песню и расскажите, с каким человеком или периодом жизни она связана. Как это изменило то, что вы слышите в ней теперь?", "Take turns choosing a song linked to a person or period in your life. How has that connection changed what you hear in it today?", "Представьте комнату как шкалу времени. Встаньте там, где впервые запомнили любимую песню, и расскажите о том моменте. Затем спойте её вместе.", "Imagine the room as a timeline. Stand where you first remember a favourite song and share that memory. Then sing it together."]
+];
+const adultCatalog=catalog.map((base,i)=>{
+ const [ru,en,qRu,qEn,taskRu,taskEn]=adultPrograms[i];
+ return [base[0],ru,en,base[3],base[4],qRu,qEn,taskRu,taskEn]
+});
+let sharedAdults=false;
+function adultEvening(index=current){
+ if(guestTopic!==null)return sharedAdults;
+ const participants=s.people.concat(s.guests?.[iso(date(index))]||[]);
+ return participants.length>0&&participants.every(p=>p.age!=null&&String(p.age).trim()!==''&&Number(p.age)>=18)
+}
+function topicAt(index=current){
+ const source=adultEvening(index)?adultCatalog:catalog;
+ return source[guestTopic??s.plan[index]]
+}
 const topics=['nature','friends','history','music'];
 const options=[['Природа','Nature'],['Дружба','Friendship'],['История','History'],['Музыка','Music']];
 const storageKey='evening-together-v1';
@@ -61,7 +89,7 @@ function recordEvening(){
  const id=guestTopic??s.plan[current],key=(guestTopic===null?eveningDate():'shared-'+iso(new Date()))+'/'+id;
  const attendees=guestTopic===null?[...s.people,...guests()]:[];
  s.history=s.history||{};
- s.history[key+'/'+Date.now()]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||'',outline:steps(catalog[id]).map(([label,body,time])=>[label,body,time])};
+ s.history[key+'/'+Date.now()]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||t(topicAt()[1],topicAt()[2]),outline:steps(topicAt()).map(([label,body,time])=>[label,body,time])};
  save()
 }
 function historyScreen(){
@@ -76,12 +104,14 @@ const providers={gemini:'Gemini',grok:'Grok'};
 let provider='gemini',aiResults=[],aiRequest=null;
 const keyPrefix='evening-together:provider:';
 function aiPrompt(){
- const c=catalog[s.plan[current]],prefs=document.getElementById('includePrefs')?.checked;
+ const c=topicAt(),prefs=document.getElementById('includePrefs')?.checked;
  const context=prefs?[...s.people,...guests()].map(p=>{
   const age=p.age==null||p.age===''?'unspecified':p.age<6?'under 6':p.age<13?'6–12':p.age<18?'13–17':'adult';
   return [age,p.topic,p.format||'read'].join(', ')
  }):[];
  return ['Write 3 distinct family worship evening outlines in '+(lang==='ru'?'Russian':'English')+'.',
+ 'Use everyday situations suitable for independent discussion. Avoid assuming anyone has children or is married.',
+ ...(prefs&&adultEvening()?['Use adult life experiences throughout, including the activity.']:[]),
  'Scripture: '+t(c[3],c[4])+'. Total time: '+duration()+' min. The app handles timing, opening prayer, Bible reading and conclusion.',
  'Return a JSON array of 3 objects with string fields title, question (an opening question), discuss (two specific discussion questions), activity (an actionable group exercise). Do not invent quotations, publications or links.',
  ...context.map(x=>'Participant preferences: '+x)].join('\n')
@@ -358,19 +388,20 @@ function questionOwner(index=current){
  const person=s.people[index%s.people.length];
  return person?.question?.trim()?person:null
 }
-function resourceLinks(question){
+function resourceLinks(question,index=current){
  const matches=discussionResources.filter(r=>r.terms.test(question)).slice(0,2);
- const links=matches.map(r=>{
+ const links=matches.map(match=>{
+  const r=adultEvening(index)&&match.video?{doc:1995200,title:['Как сделать свои молитвы более содержательными?','Making your prayers more meaningful']}:match;
   const url=r.video?'https://www.jw.org/'+lang+'/'+t(...r.video):article(r.doc);
   return '<p><a target="_blank" rel="noopener noreferrer" href="'+esc(url)+'">'+(r.video?t('Видео','Video'):t('Статья','Article'))+' · '+esc(t(...r.title))+' ↗</a></p>'
  });
  const search='https://wol.jw.org/'+t('ru/wol/s/r2/lp-u','en/wol/s/r1/lp-e')+'?q='+encodeURIComponent(question);
  return links.join('')+'<a target="_blank" rel="noopener noreferrer" href="'+esc(search)+'">'+t('Искать этот вопрос в WOL','Search WOL for this question')+' ↗</a>'
 }
-function questionCard(person){
+function questionCard(person,index=current){
  if(!person)return '';
  return '<section class="family-question"><strong>'+t('Вопрос для семейного обсуждения','Family discussion question')+'</strong><blockquote>'+esc(person.question)+'</blockquote>'+
- (person.name?'<p>'+esc(person.name)+'</p>':'')+resourceLinks(person.question)+'</section>'
+ (person.name?'<p>'+esc(person.name)+'</p>':'')+resourceLinks(person.question,index)+'</section>'
 }
 
 function familyQuestion(){
@@ -389,12 +420,12 @@ function render(){
  if(view==='guests'){guestsScreen();return}
  if(view==='ai'){aiScreen();return}
  if(view==='settings'){settings();return}
- const c=catalog[guestTopic??s.plan[current]],title=t(c[1],c[2]);
+ const c=topicAt(),title=t(c[1],c[2]);
  if(view==='play'){play(c);return}
  if(view==='detail'){renderEvening(c,title);return}
  let next=upcomingEvening();if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=catalog[s.plan[next]],featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next))+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(catalog[id][1],catalog[id][2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
+ const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -405,7 +436,7 @@ const formats={
  act:['Показывать','Act','Показать, как применить мысль в обычной жизни','Act out a way to use the idea in everyday life']
 };
 function chapterLink(c){
- const path=chapters[catalog.indexOf(c)];
+ const path=chapters[guestTopic??s.plan[current]];
  const url='https://wol.jw.org/'+t('ru/wol/b/r2/lp-u','en/wol/b/r1/lp-e')+'/nwt/'+path;
  return '<a href="'+url+'" target="_blank" rel="noopener">'+t(c[3],c[4])+' ↗</a>'
 }
@@ -470,8 +501,15 @@ function adaptEvening(outline,c){
  const personal=bankQuestion()||savedIdea()||questionOwner();
  activity[0]=t(...paceLabels[pace]);
  if(pace==='active'){
-  const game=activeGames[catalog.indexOf(c)];
-  if(bankQuestion()){
+  const id=guestTopic??s.plan[current];
+  const game=activeGames[id];
+  if(adultEvening()&&bankQuestion()){
+   activity[0]=t('Две точки зрения','Two perspectives');
+   activity[1]=question+' '+t('Выберите две позиции в комнате: «что могу сделать я» и «какая поддержка нужна». Перейдите от одной к другой и назовите по одному конкретному шагу.','Choose two positions in the room: what I can do and what support would help. Move between them and name one specific step at each.');
+  }else if(adultEvening()&&!savedIdea()){
+   activity[0]=t(...paceLabels.active);
+   activity[1]=t(adultPrograms[id][6],adultPrograms[id][7]);
+  }else if(bankQuestion()){
    activity[0]=t('Стоп-кадр','Freeze frame');
    activity[1]=question+' '+t('Один придумывает бытовую сцену по вопросу и замирает в момент выбора. Второй угадывает, что случилось, и показывает следующий шаг. Смените роли и придумайте другой финал. Какой из двух вариантов вы попробовали бы сами?','One player mimes an everyday situation related to the question and freezes at a choice. A partner guesses the situation and acts out the next move. Swap roles and try a different ending. Which ending would you try in real life?')
   }else if(savedIdea()){
@@ -481,7 +519,7 @@ function adaptEvening(outline,c){
   }
  }else if(personal){
   activity[1]=question+' '+t('Вспомните пример из своей жизни. Что бы вы сказали близкому человеку в такой ситуации?','Recall a personal example. What would you tell someone close to you in that situation?')
- }else activity[1]=t(...quietActivities[c[0]]);
+ }else activity[1]=adultEvening()?t(c[7],c[8]):t(...quietActivities[c[0]]);
  return outline
 }
 
@@ -522,7 +560,7 @@ function renderEvening(c,title){
   return '<li><div><strong>'+label+'</strong><p>'+esc(description)+'</p>'+link+'</div><small>'+minutes+t(' мин',' min')+'</small></li>'
  }).join('');
  app.innerHTML=btn(t('← План','← Planner'),"go('home')")+
-  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+'</div><h1>'+title+'</h1><p>'+(bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
+  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+(adultEvening()?t(' · Для взрослых',' · Adults'):'')+'</div><h1>'+title+'</h1><p>'+(bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
   pacePicker()+questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
   (bank?'':'<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section>')+'</aside></div>'+
   '<div class="row">'+(bank?btn(t('В копилку','Open question box'),"go('bank')"):btn(t('Заменить тему','Change topic'),'swap()'))+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
@@ -532,19 +570,22 @@ function steps(c){
  const snack=s.snack?10:0,active=duration()-snack,read=Math.round(active*.30),discuss=Math.round(active*.25);
  const idea=savedIdea();
  const base=[[t('Начнём вместе','Gather together'),t('Начните с молитвы. ','Begin with prayer. ')+(idea?idea.question:t(c[5],c[6])),3],[t('Откроем Библию','Open the Bible'),t(c[3],c[4])+'. '+t('Прочитайте вместе. Что вы заметили в этом отрывке?','Read together. What stood out to you?'),read],[questionOwner()?t('Вопрос семьи','Family question'):t('Поговорим','Talk together'),(idea?idea.discuss:t('Как эта мысль связана с тем, что произошло у тебя на этой неделе?','How does this thought relate to something that happened this week?'))+familyQuestion(),discuss],...(snack?[[t('Перекус','Snack break'),t('Возьмите любимый семейный перекус и немного отдохните.','Enjoy a favourite family snack and take a break.'),snack]]:[]),[t('Попробуем вместе','Try it together'),idea?idea.activity:t(c[7],c[8]),active-read-discuss-6],[t('В завершение','Wrap up'),t('Поделитесь одной мыслью, которую хочется запомнить. Завершите молитвой.','Share a thought to take into the week. Conclude with prayer.'),3]];
- const planned=bankQuestion();return adaptEvening(planned?bankSteps(planned.question,base):base,c)
+ const planned=bankQuestion();
+ const outline=planned?bankSteps(planned.question,base):base;
+ if(planned&&adultEvening())outline[outline.length-2][1]=t('Возьмите пример из повседневной жизни. Обсудите два возможных решения и какое из них согласуется с прочитанным.','Take an everyday example. Consider two possible responses and which reflects the reading.');
+ return adaptEvening(outline,c)
 }
 function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
 function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
-function move(n){step+=n;if(step>=steps(catalog[guestTopic??s.plan[current]]).length){recordEvening();go('home')}else render()}
+function move(n){step+=n;if(step>=steps(topicAt()).length){recordEvening();go('home')}else render()}
 function swap(){if(guestTopic!==null){guestTopic=(guestTopic+1)%catalog.length;render();return}let id=s.plan[current];do{id=(id+1)%catalog.length}while(s.plan.length<catalog.length&&s.plan.includes(id));const j=s.plan.indexOf(id);if(j>=0)s.plan[j]=s.plan[current];s.plan[current]=id;save();render()}
 function shareTopic(){
- const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current]);
+ const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current])+(adultEvening()?'&audience=adult':'');
  const copyOutline=!!eveningPace()||location.protocol==='file:'||!!savedIdea()||!!bankQuestion();
  const msg=copyOutline?t('Для отправки скопируйте программу','Copy the outline to share'):t('Ссылка на тему','Topic link');
- const value=copyOutline?[bankQuestion()?.question||savedIdea()?.title||document.title,...steps(catalog[guestTopic??s.plan[current]]).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
+ const value=copyOutline?[bankQuestion()?.question||savedIdea()?.title||document.title,...steps(topicAt()).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
  sharebox.innerHTML=field(msg,'<input readonly value="'+esc(value)+'">');const input=sharebox.querySelector('input');input.focus();input.select()
 }
 function edit(){draft=s.people.map(p=>({...p}));if(!draft.length)draft.push({name:'',topic:'nature'});go('settings')}
@@ -562,9 +603,9 @@ language.onchange=()=>{
 };
 window.addEventListener('languagechange',()=>{if(!['ru','en'].includes(s.lang))render()});
 document.addEventListener('keydown',e=>{if(view!=='play'||!e.key.startsWith('Arrow'))return;e.preventDefault();const nodes=Array.from(document.querySelectorAll('button,select,a[href]'));const dir=['ArrowDown','ArrowRight'].includes(e.key)?1:-1;nodes[(nodes.indexOf(document.activeElement)+dir+nodes.length)%nodes.length].focus()});
-const shared=location.hash.match(/^#evening=(\d+)$/);
+const shared=location.hash.match(/^#evening=(\d+)(&audience=adult)?$/);
 if(shared && +shared[1]<catalog.length){
- guestTopic=+shared[1];current=0;
+ guestTopic=+shared[1];sharedAdults=!!shared[2];current=0;
  view='detail'
 }
 render()
