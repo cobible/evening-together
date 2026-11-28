@@ -90,7 +90,7 @@ function recordEvening(){
  const attendees=guestTopic===null?[...s.people,...guests()]:[];
  s.history=s.history||{};
  const savedKey=key+'/'+Date.now();
- s.history[savedKey]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:bankQuestion()?.question||savedIdea()?.title||t(topicAt()[1],topicAt()[2]),outline:steps(topicAt()).map(([label,body,time])=>[label,body,time])};
+ s.history[savedKey]={id,pace:eveningPace(),day:iso(new Date()),minutes:duration(),attendees:attendees.map(p=>({name:p.name,age:p.age})),title:focusQuestion()?.question||savedIdea()?.title||t(topicAt()[1],topicAt()[2]),outline:steps(topicAt()).map(([label,body,time])=>[label,body,time])};
  save();return savedKey
 }
 let finishedRecord=null,actionDraft='';
@@ -338,6 +338,52 @@ function welcome(){
  const label=s.survey?.length?t('Продолжить знакомство','Continue introduction'):t('Начать знакомство','Meet the family');
  return '<section class="hero"><h1>'+t('Каким будет ваш семейный вечер?','What would your family evening look like?')+'</h1><p>'+t('Начните с короткой беседы. Передавайте телефон по кругу: каждый выберет тему, занятие и свой вопрос. Ответы сохраняются на этом устройстве.','Start with a short conversation. Pass the phone around so everyone can choose a topic, an activity and a question. Replies are saved on this device.')+'</p>'+btn(label,'beginSurvey()',true)+'</section>'
 }
+const questionGuides = [
+ {terms:/помир|мириться|примир|прощ|простить|обид|ссор|извин|forgiv|resent|apolog|quarrel|make peace|make up after/i, doc:2015734,
+  title: ["Великодушно прощайте","Forgive Freely"],
+  read: ["Прочитайте Колоссянам 3:13 и абзац статьи, где прощение сравнивается с прощением долга.","Read Colossians 3:13 and the paragraph comparing forgiveness to cancelling a debt."],
+  discuss: ["Какие слова помогут человеку почувствовать, что его услышали?","What words might help someone feel heard?"],
+  adult: ["Вспомните небольшой спор. По очереди попробуйте начать разговор заново и пересказать, что было важно другому.","Recall a small disagreement. Take turns reopening the conversation and saying what mattered to the other person."],
+  family: ["Два друга одновременно потянулись за одной игрой и поссорились. Сыграйте их встречу на следующий день. Как каждый мог бы начать?","Two friends reached for the same game and argued. Act out meeting the next day. How could each one start?"]
+ },
+ {terms:/трево|беспоко|волную|волнени|страшно|страх|пережива|anxi|worr|afraid/i, doc:2023005,
+  title: ["Молитва. «Переложите на него все свои беспокойства»","Prayer—“Throw All Your Anxiety on Him”"],
+  read: ["Прочитайте 1 Петра 5:7 и первый абзац статьи после этого стиха.","Read 1 Peter 5:7 and the first paragraph after that verse in the article."],
+  discuss: ["Что в этом стихе помогает рассказать Иегове о своём беспокойстве?","What in this verse makes it easier to tell Jehovah about a worry?"],
+  adult: ["Представьте, что завтра предстоит трудный разговор. Один рассказывает, что его тревожит, второй слушает и спрашивает, какая помощь нужна.","Imagine facing a difficult conversation tomorrow. One person shares a concern and the other listens and asks what would help."],
+  family: ["Представьте первый день в новой школе. Что могло бы тревожить ученика? Придумайте, о чём он мог бы попросить Иегову и кого попросить о помощи рядом.","Imagine a first day at a new school. What might the student worry about? Think of something to ask Jehovah for and someone nearby who could help."]
+ },
+ {terms:/подруж|друж|друз|другом|друга|другу|friend/i, doc:1101989332,
+  title: ["Как найти настоящих друзей?","How Can I Make Real Friends?"],
+  read: ["Прочитайте Притчи 17:17 и найдите в статье пример Марвии.","Read Proverbs 17:17 and find Marvia’s example in the chapter."],
+  discuss: ["Когда другу бывает трудно сказать нам правду?","When might a friend find it hard to tell us the truth?"],
+  adult: ["Представьте, что друг собирается принять решение, о котором может пожалеть. Попробуйте две первые фразы и обсудите, какая поможет ему открыться.","Imagine a friend is about to make a choice they may regret. Try two ways to open the conversation. Which invites them to speak freely?"],
+  family: ["Представьте, что приятель предлагает оставить новичка вне игры. По очереди сыграйте друга, который поможет ему передумать.","Imagine a friend wants to leave a newcomer out of a game. Take turns playing the friend who helps them reconsider."]
+ },
+ {terms:/молит|молить|молюсь|молим|молят|pray/i, doc:1102013252,
+  title: ["Она излила свое сердце Богу в молитве","She Opened Her Heart to God in Prayer"],
+  read: ["Прочитайте 1 Самуила 1:10–11 и абзацы 10–11 об Анне.","Read 1 Samuel 1:10–11 and paragraphs 10–11 about Hannah."],
+  discuss: ["Что Анна смогла выразить в молитве, хотя окружающим было трудно её понять?","What could Hannah express in prayer that others found hard to understand?"],
+  adult: ["Каждый может вспомнить событие дня и подумать, за что поблагодарить Иегову или о чём попросить. Поделитесь одной мыслью, если хочется.","Each person can recall a moment from today and think of something to thank Jehovah for or ask him about. Share a thought if you wish."],
+  family: ["Нарисуйте или опишите один момент дня. Что об этом моменте вам хотелось бы рассказать Иегове своими словами?","Draw or describe one moment from today. What would you like to tell Jehovah about it in your own words?"]
+ },
+ {terms:/уста[лв]|усталость|утом|нет сил|мало сил|без сил|выгор|выгоран|tired|exhaust|fatigue|burnt out|burned out|burnout|low energy/i, doc:1102013258,
+  title: ["Он нашел утешение в своем Боге","He Took Comfort in His God"],
+  read: ["Прочитайте 1 Царей 19:5–7 и абзацы 13–14 о помощи Илье.","Read 1 Kings 19:5–7 and paragraphs 13–14 about the help Elijah received."],
+  discuss: ["Как ангел показал, что понимает, насколько Илья устал?","How did the angel show that he understood how tired Elijah was?"],
+  adult: ["Представьте вечер после трудной недели. Каждый может назвать одну обязанность, с которой ему пригодилась бы помощь. Договоритесь об одном посильном деле.","Imagine an evening after a difficult week. Each person can name one task they could use help with. Agree on one manageable way to help."],
+  family: ["Один играет человека, вернувшегося домой очень уставшим. Остальные предлагают помощь и дают ему выбрать. Потом поменяйтесь ролями.","One person plays someone arriving home very tired. The others offer help and let them choose. Then swap roles."]
+ }
+];
+function questionGuide(question){return questionGuides.find(g=>g.terms.test(question||''))}
+function guideLink(g){return '<a target="_blank" rel="noopener" href="'+article(g.doc)+'">'+esc(t(...g.title))+' ↗</a>'}
+function focusQuestion(index=current){
+ const bank=bankQuestion(index);if(bank)return bank;
+ const q=questionOwner(index), idea=s.ideas?.[iso(date(index))];
+ if(idea?.language===lang && idea.topic===s.plan[index])return null;
+ return q&&questionGuide(q.question)?q:null
+}
+
 const discussionResources=[
  {terms:/молит|молить|молиться|молюсь|молим|pray/i,title:['Отвечает ли Иегова на молитвы?','Does Jehovah Answer Prayers?'],video:['библиотека/видео/стань-другом-иеговы/иегова-отвечает-на-молитвы/','library/videos/become-jehovahs-friend-2/does-jehovah-answer-prayers/']},
  {terms:/прощ|простить|обид|помир|ссор|извин|forgiv|resent|apolog|quarrel/i,title:['Как прощать','Forgiving freely'],doc:2015734},
@@ -408,6 +454,7 @@ function questionOwner(index=current){
  return person?.question?.trim()?person:null
 }
 function resourceLinks(question,index=current){
+ const guide=questionGuide(question);
  const matches=discussionResources.filter(r=>r.terms.test(question)).slice(0,2);
  const links=matches.map(match=>{
   const r=adultEvening(index)&&match.video?{doc:1995200,title:['Как сделать свои молитвы более содержательными?','Making your prayers more meaningful']}:match;
@@ -415,7 +462,7 @@ function resourceLinks(question,index=current){
   return '<p><a target="_blank" rel="noopener noreferrer" href="'+esc(url)+'">'+(r.video?t('Видео','Video'):t('Статья','Article'))+' · '+esc(t(...r.title))+' ↗</a></p>'
  });
  const search='https://wol.jw.org/'+t('ru/wol/s/r2/lp-u','en/wol/s/r1/lp-e')+'?q='+encodeURIComponent(question);
- return links.join('')+'<a target="_blank" rel="noopener noreferrer" href="'+esc(search)+'">'+t('Искать этот вопрос в WOL','Search WOL for this question')+' ↗</a>'
+ return (guide?'<p>'+guideLink(guide)+'</p>':'')+links.filter(link=>!guide||!link.includes(article(guide.doc))).join('')+'<a target="_blank" rel="noopener noreferrer" href="'+esc(search)+'">'+t('Искать этот вопрос в WOL','Search WOL for this question')+' ↗</a>'
 }
 function questionCard(person,index=current){
  if(!person)return '';
@@ -520,7 +567,7 @@ function render(){
  if(view==='detail'){renderEvening(c,title);return}
  let next=upcomingEvening();if(next<0)next=s.plan.length-1;
  const calendarIdea=i=>{const idea=s.ideas?.[iso(date(i))];return idea?.topic===s.plan[i]&&idea.language===lang?idea:null};
- const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(bankQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(bankQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!bankQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")+' '+btn(t('Резервная копия','Family backup'),'openBackup()')+' '+btn(t('Ввести код вечера','Enter evening code'),"go('tvEntry')")
+ const n=topicAt(next),featured=calendarIdea(next);app.innerHTML=(s.people.length?'':welcome())+'<section class="hero"><div class="meta">'+t('Ближайший в плане','Featured evening')+' · '+fmt(next)+'</div><h1>'+esc(focusQuestion(next)?.question||featured?.title||t(n[1],n[2]))+'</h1><p>'+esc(questionGuide(focusQuestion(next)?.question)?t(...questionGuide(focusQuestion(next).question).discuss):bankQuestion(next)?t('Из вашей копилки','From your question box'):featured?.question||t(n[5],n[6]))+'</p><div class="row">'+btn(t('Открыть вечер →','View evening →'),'detail('+next+')',true)+btn(t('Настроить для семьи','Personalise for family'),'edit()')+'</div></section>'+questionCard(questionOwner(next),next)+'<div class="row bank-entry">'+btn(t('Записать вопрос','Save a question'),'openBank()')+btn(t('Копилка вопросов','Question box'),"go('bank')")+'</div><h2>'+t('Семейный календарь','Family calendar')+'</h2>'+s.plan.map((id,i)=>'<button class="week" onclick="detail('+i+')"><span class="date">'+fmt(i)+'</span><strong>'+esc(focusQuestion(i)?.question||calendarIdea(i)?.title||t(topicAt(i)[1],topicAt(i)[2]))+(!focusQuestion(i)&&questionOwner(i)?'<small>'+esc(questionOwner(i).question)+'</small>':'')+'</strong><span>→</span></button>').join('');app.innerHTML+=btn(t('История вечеров','Evening history'),"go('history')")+' '+btn(t('Резервная копия','Family backup'),'openBackup()')+' '+btn(t('Ввести код вечера','Enter evening code'),"go('tvEntry')")
 }
 
 const chapters=['40/6','51/3','44/16','44/16','40/6','42/10','17/4','19/100','20/6','59/1','1/6','19/150'];
@@ -646,18 +693,18 @@ function roles(){
 function renderEvening(c,title){
  const idea=savedIdea();
  if(idea)title=esc(idea.title);
- const bank=bankQuestion();if(bank)title=esc(bank.question);
+ const bank=bankQuestion(),focus=focusQuestion(),guide=questionGuide(focus?.question);if(focus)title=esc(focus.question);
  const dateLabel=guestTopic===null?fmt(current):t('Общая тема','Shared topic');
  const controls=[btn(t('Начать вечер →','Start evening →'),'start()',true)];
 
  const outline=steps(c).map(([label,description,minutes],index)=>{
-  const link=index===1&&!bank?'<p>'+chapterLink(c)+'</p>':'';
+  const link=index===1&&guide?'<p>'+guideLink(guide)+'</p>':index===1&&!bank?'<p>'+chapterLink(c)+'</p>':'';
   return '<li><div><strong>'+label+'</strong><p>'+esc(description)+'</p>'+link+'</div><small>'+minutes+t(' мин',' min')+'</small></li>'
  }).join('');
  app.innerHTML=btn(t('← План','← Planner'),"go('home')")+
-  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+(adultEvening()?t(' · Для взрослых',' · Adults'):'')+'</div><h1>'+title+'</h1><p>'+(bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
+  '<section class="hero"><div class="meta">'+dateLabel+' · '+duration()+t(' мин',' min')+(adultEvening()?t(' · Для взрослых',' · Adults'):'')+'</div><h1>'+title+'</h1><p>'+(guide?esc(t(...guide.discuss)):bank?t('Из вашей копилки','From your question box'):idea?esc(idea.question):t(c[5],c[6]))+'</p><div class="row">'+controls.join('')+(guestTopic===null?btn(t('Гости на вечер','Evening guests'),'editGuests()')+(bank?'':btn(t('Идеи с ИИ','AI ideas'),'openAI()')):'')+(idea?btn(t('Вернуть обычную программу','Restore original outline'),'restoreOutline()'):'')+'</div></section>'+
   pacePicker()+questionCard(questionOwner())+'<div class="evening-grid"><section class="panel"><h2>'+t('Программа','Evening outline')+'</h2><ol class="outline">'+outline+'</ol></section><aside>'+roles()+
-  (bank?'':'<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section>')+'</aside></div>'+
+  (focus?'':'<section class="panel"><h2>'+t('К подготовке','Prepare together')+'</h2><p>'+chapterLink(c)+'</p><p><a target="_blank" rel="noopener" href="'+article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])+'">'+t('Дополнительная статья · WOL','Further reading · WOL')+' ↗</a></p></section>')+'</aside></div>'+
   '<div class="row">'+(bank?btn(t('В копилку','Open question box'),"go('bank')"):btn(t('Заменить тему','Change topic'),'swap()'))+btn(t('Открыть на телевизоре','Open on TV'),'openTransfer()')+' '+btn(t('Поделиться темой','Share topic'),'shareTopic()')+'</div><div id="sharebox"></div>'
 }
 
@@ -668,9 +715,22 @@ function steps(c){
  const planned=bankQuestion();
  const outline=planned?bankSteps(planned.question,base):base;
  if(planned&&adultEvening())outline[outline.length-2][1]=t('Возьмите пример из повседневной жизни. Обсудите два возможных решения и какое из них согласуется с прочитанным.','Take an everyday example. Consider two possible responses and which reflects the reading.');
- return adaptEvening(outline,c)
+ const rows=adaptEvening(outline,c),focused=focusQuestion(),guide=questionGuide(focused?.question);
+ if(guide){
+  rows[0][1]=t('Начните с молитвы. Прочитайте вопрос вечера вслух.','Begin with prayer and read the evening question aloud.');
+  rows[1][1]=t(...guide.read);
+  rows[2][1]=focused.question+' '+t(...guide.discuss);
+  if(eveningPace()!=='light'){
+   const activity=rows[rows.length-2];
+   activity[0]=t('Попробуем вместе','Try it together');
+   activity[1]=t(...(adultEvening()?guide.adult:guide.family));
+   if(eveningPace()==='active')activity[1]+=' '+t('Покажите один момент этой ситуации без слов и предложите остальным его угадать.','Mime one moment from the situation and invite the others to guess it.');
+   if(eveningPace()==='quiet')activity[1]+=' '+t('Можно просто обсудить этот пример за столом.','You can simply talk through the example at the table.');
+  }
+ }
+ return rows
 }
-function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+(step===0?previousAction():'')+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
+function play(c){const list=steps(c),x=list[step];app.innerHTML=btn(t('← Выйти','← Exit'),"go('detail')")+(step===0?previousAction():'')+'<section class="hero"><div class="meta">'+(step+1)+' / '+list.length+' · '+x[2]+t(' мин',' min')+'</div><h1>'+x[0]+'</h1><p>'+esc(x[1])+'</p>'+(step===1?(questionGuide(focusQuestion()?.question)?guideLink(questionGuide(focusQuestion().question)):bankQuestion()?resourceLinks(bankQuestion().question):chapterLink(c)):step===2&&questionOwner()?resourceLinks(questionOwner().question):'')+'</section><div class="row">'+(step?btn(t('Назад','Back'),'move(-1)'):'')+btn(step===list.length-1?t('Завершить','Finish'):t('Дальше →','Next →'),'move(1)',true)+'</div>';app.querySelector('.primary').focus()}
 function go(v){if(aiRequest){aiRequest.abort();aiRequest=null}if(v==='home'){guestTopic=null;if(location.hash)history.replaceState(null,'',location.href.split('#')[0])}view=v;render();scrollTo(0,0)}
 function detail(i){current=i;go('detail')}
 function start(){step=0;go('play')}
@@ -723,8 +783,9 @@ function tvOutline(r){
   if(r.bank)s.bank=[{date:day,question:r.question}];
   if(r.idea){const [title,question,discuss,activity]=r.idea;s.ideas={[day]:{topic:r.id,language:r.lang,title,question,discuss,activity}}}
   const c=topicAt();
-  return {title:r.bank?r.question:savedIdea()?.title||t(c[1],c[2]),steps:steps(c),reading:r.bank?resourceLinks(r.question):chapterLink(c),questionLinks:r.question?resourceLinks(r.question):'',
-   further:r.bank?'':article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])}
+  const focus=focusQuestion(),guide=questionGuide(focus?.question);
+  return {title:focus?focus.question:savedIdea()?.title||t(c[1],c[2]),steps:steps(c),reading:guide?guideLink(guide):r.bank?resourceLinks(r.question):chapterLink(c),questionLinks:r.question?resourceLinks(r.question):'',
+   further:focus?'':article(({nature:2023324,friends:2015734,music:1994322,history:2014205})[c[0]])}
  }finally{s=original.s;current=original.current;guestTopic=original.guestTopic;lang=original.lang}
 }
 function tvList(rows){
@@ -766,9 +827,9 @@ function tvScreen(){
 
 function shareTopic(){
  const url=new URL(location.href);url.hash='evening='+(guestTopic??s.plan[current])+(adultEvening()?'&audience=adult':'');
- const copyOutline=!!eveningPace()||location.protocol==='file:'||!!savedIdea()||!!bankQuestion();
+ const copyOutline=!!eveningPace()||location.protocol==='file:'||!!savedIdea()||!!focusQuestion();
  const msg=copyOutline?t('Для отправки скопируйте программу','Copy the outline to share'):t('Ссылка на тему','Topic link');
- const value=copyOutline?[bankQuestion()?.question||savedIdea()?.title||document.title,...steps(topicAt()).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
+ const value=copyOutline?[focusQuestion()?.question||savedIdea()?.title||document.title,...steps(topicAt()).map(x=>x[0]+' — '+x[1])].join(' / '):url.href;
  sharebox.innerHTML=field(msg,'<input readonly value="'+esc(value)+'">');const input=sharebox.querySelector('input');input.focus();input.select()
 }
 function edit(){draft=s.people.map(p=>({...p}));if(!draft.length)draft.push({name:'',topic:'nature'});go('settings')}
